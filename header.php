@@ -15,9 +15,15 @@
                 <a class="navbar-brand" href="index.php">Scouting Pillow</a>
                 <?php
                     if (isset($_SESSION['user'])) {
-                        
-                    } else {
-                        
+                        echo("<div class=\"dropdown nav navbar-nav pull-right\">");
+                        echo("<button class=\"btn btn-default dropdown-toggle\" type=\button\" id=\"userMenu\" data-toggle=\"dropdown\" aria-expanded=\"true\">");
+                        echo($_SESSION['user']);
+                        echo("<span class=\"caret\"></span>");
+                        echo("</button>");
+                        echo("<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"userMenu\">");
+                        echo("<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"logout.php\">Logout</a></li>");
+                        echo("</ul>");
+                        echo("</div>");
                     }
                 ?>
             </div>
