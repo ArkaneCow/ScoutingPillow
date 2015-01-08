@@ -10,7 +10,11 @@
 <?php
     include('header.php');
 ?>
-
+<div class="container">
+    <div class="page-header">
+        <h3>Users</h3>
+    </div>
+</div>
 <?php
     include('footer.php');
 ?>
