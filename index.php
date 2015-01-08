@@ -4,7 +4,7 @@
 ?>
 <?php
     if (!isset($_SESSION['user'])) {
-        header("Location: login_page.php");
+        header('Location: login_page.php');
     }
 ?>
 <?php
@@ -15,48 +15,52 @@
     <div class="page-header">
         <h3>Dashboard</h3>
     </div>
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-        <?php
-            if ($_SESSION['rank'] <= 1) {
-                //user and event tabs
-                echo("<li><a href=\"#users\" role=\"tab\" data-toggle=\"tab\">Users</a></li>");
-                echo("<li><a href=\"#events\" role=\"tab\" data-toggle=\"tab\">Events</a></li>");
-            }
-            if ($_SESSION['rank'] <= 2) {
-                //data tab
-                echo("<li><a href=\"#data\" role=\"tab\" data-toggle=\"tab\">Data</a></li>");
-            }
-            if ($_SESSION['rank'] <= 3) {
-                //scouting tab
-                echo("<li><a href=\"#scout\" role=\"tab\" data-toggle=\"tab\">Scout</a></li>");
-            }
-        ?>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane active" id="home">
-            
-        </div>
-        <?php
-            if ($_SESSION['rank'] <= 1) {
-                //user and event tabs
-                echo("<div class=\"tab-pane\" id=\"users\">");
-                echo("</div>");
-                echo("<div class=\"tab-pane\" id=\"events\">");
-                echo("</div>");
-            }
-            if ($_SESSION['rank'] <= 2) {
-                //data tab
-                echo("<div class=\"tab-pane\" id=\"data\">");
-                echo("</div>");
-            }
-            if ($_SESSION['rank'] <= 3) {
-                //scouting tab
-                echo("<div class=\"tab-pane\" id=\"scout\">");
-                echo("</div>");
-            }
-        ?>
-    </div>
+    <?php
+        if ($_SESSION['rank'] <= 1) {
+            echo("<div class=\"panel panel-default\">");
+            echo("<div class=\"panel-heading\">");
+            echo("<h2 class=\"panel-title\">Users</h2>");
+            echo("</div>");
+            echo("<div class=\"panel-body\">");
+            echo("<a class=\"btn btn-lg\" href=\"manage_users.php\" role=\"button\">Manage Users</a>");
+            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Approve Registrations</a>");
+            echo("</div>");
+            echo("</div>");
+            echo("<div class=\"panel panel-default\">");
+            echo("<div class=\"panel-heading\">");
+            echo("<h2 class=\"panel-title\">Events</h2>");
+            echo("</div>");
+            echo("<div class=\"panel-body\">");
+            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Manage Events</a>");
+            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Event Permissions</a>");
+            echo("</div>");
+            echo("</div>");
+        }
+        if ($_SESSION['rank'] <= 2) {
+            echo("<div class=\"panel panel-default\">");
+            echo("<div class=\"panel-heading\">");
+            echo("<h2 class=\"panel-title\">Data</h2>");
+            echo("</div>");
+            echo("<div class=\"panel-body\">");
+            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">View Raw Data</a>");
+            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">View Data Statistics</a>");
+            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Team Database</a>");
+            echo("</div>");
+            echo("</div>");
+        }
+        if ($_SESSION['rank'] <= 3) {
+            echo("<div class=\"panel panel-default\">");
+            echo("<div class=\"panel-heading\">");
+            echo("<h2 class=\"panel-title\">Scouting</h2>");
+            echo("</div>");
+            echo("<div class=\"panel-body\">");
+            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">User Events</a>");
+            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Pre Scouting</a>");
+            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Live Scouting</a>");
+            echo("</div>");
+            echo("</div>");
+        }
+    ?>
 </div>
 <?php
     include('footer.php');
