@@ -1,7 +1,3 @@
-<?php
-    session_start();
-    include('config.php');
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +12,7 @@
                 <?php
                     if (isset($_SESSION['user'])) {
                         echo("<div class=\"dropdown nav navbar-nav pull-right\">");
-                        echo("<button class=\"btn btn-default dropdown-toggle\" type=\button\" id=\"userMenu\" data-toggle=\"dropdown\" aria-expanded=\"true\">");
+                        echo("<button class=\"btn btn-default navbar-btn dropdown-toggle\" type=\button\" id=\"userMenu\" data-toggle=\"dropdown\" aria-expanded=\"true\">");
                         echo($_SESSION['user']);
                         echo("<span class=\"caret\"></span>");
                         echo("</button>");

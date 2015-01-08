@@ -1,5 +1,6 @@
 <?php
-    include('header.php');
+    session_start();
+    include('config.php');
 ?>
 <?php
     $email_check = $_POST["email"];
@@ -9,10 +10,8 @@
         $record = mysql_fetch_array($db_query);
         if (md5($password_check) == $record['password']) {
             $_SESSION['user'] = $email_check;
+            $_SESSION['rank'] = $record['rank'];
             header('Location: index.php');
         }
     }
-?>
-<?php
-    include('footer.php');
 ?>
