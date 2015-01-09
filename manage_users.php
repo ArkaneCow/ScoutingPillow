@@ -50,7 +50,7 @@
                             echo("<td scope=\"row\">");
                             echo("<a class=\"btn\" href=\"#\" role=\"button\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>View</a>");
                             if ($record['rank'] != 0) {
-                                echo("<a class=\"btn\" href=\"#\" role=\"button\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>Remove</a>");
+                                echo("<a class=\"btn\" href=\"delete_user.php?id=" . $record['id'] . "\" role=\"button\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>Remove</a>");
                             }
                             echo("</td>");
                             echo("</tr>");
