@@ -38,7 +38,7 @@
                             $rank = $record['rank'];
                             $role = "";
                             if ($rank == 0) {
-                                $role = "Creator";
+                                $role = "Overlord";
                             } else if ($rank == 1) {
                                 $role = "Admin";
                             } else if ($rank == 2) {
