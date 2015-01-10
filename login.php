@@ -11,6 +11,7 @@
         if (md5($password_check) == $record['password']) {
             $_SESSION['user'] = $email_check;
             $_SESSION['rank'] = $record['rank'];
+            $_SESSION['id'] = $record['id'];
         }
     }
     header('Location: index.php');

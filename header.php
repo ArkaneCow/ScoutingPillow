@@ -17,6 +17,7 @@
                         echo("<span class=\"caret\"></span>");
                         echo("</button>");
                         echo("<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"userMenu\">");
+                        echo("<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"view_user.php?id=" . $_SESSION['id'] . "\">" . $_SESSION['user'] . "</a></li>");
                         echo("<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"logout.php\">Logout</a></li>");
                         echo("</ul>");
                         echo("</div>");
