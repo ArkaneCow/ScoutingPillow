@@ -60,9 +60,6 @@
             </table>
         </div>
     </div>
-    <div class ="page-header">
-        <h3>Register</h3>
-    </div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title">Create User</h2>
