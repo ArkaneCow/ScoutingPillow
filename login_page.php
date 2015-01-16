@@ -31,6 +31,7 @@
                 </div>
                 <br>
                 <input type="submit" value="Login" class="btn btn-primary">
+                <a href="register_page.php" class="btn btn-primary">Register</a>
             </form>
         </div>
     </div>
