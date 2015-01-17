@@ -31,7 +31,7 @@
             echo("<h2 class=\"panel-title\">Events</h2>");
             echo("</div>");
             echo("<div class=\"panel-body\">");
-            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Manage Events</a>");
+            echo("<a class=\"btn btn-lg\" href=\"manage_events.php\" role=\"button\">Manage Events</a>");
             echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Event Permissions</a>");
             echo("</div>");
             echo("</div>");
