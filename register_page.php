@@ -33,7 +33,7 @@
                     <label><input type="radio" name="rank" value="3">Scouter</label>
                 </div>
                 <br>
-                <input type="submit" value="Register" class="btn">
+                <input type="submit" value="Register" class="btn btn-primary">
             </form>
         </div>
     </div>
