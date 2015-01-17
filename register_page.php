@@ -14,7 +14,7 @@
             <h2 class="panel-title">Register</h2>
         </div>
         <div class="panel-body">
-            <form action="create_user.php" method="post">
+            <form action="register.php" method="post">
                 <div class="input-group">
                     <span class="input-group-addon" id="email-addon">@</span>
                     <input type="text" name="email" class="form-control" placeholder="Email" aria-describedby="email-addon">
