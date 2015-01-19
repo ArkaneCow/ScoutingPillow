@@ -84,7 +84,7 @@
                     <label><input type="radio" name="rank" value="3">Scouter</label>
                 </div>
                 <br>
-                <input type="submit" value="Create" class="btn">
+                <input type="submit" value="Create User" class="btn">
             </form>
         </div>
     </div>
