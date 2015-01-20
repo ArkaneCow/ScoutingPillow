@@ -42,7 +42,6 @@
             echo("</div>");
             echo("<div class=\"panel-body\">");
             echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">View Raw Data</a>");
-            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">View Data Statistics</a>");
             echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Team Database</a>");
             echo("</div>");
             echo("</div>");
