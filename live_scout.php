@@ -29,13 +29,13 @@ if (!isset($_GET['id'])) {
         <br>
         <h4>
             <?php
-                echo($record['eventName']);
+            echo($record['eventName']);
             ?>
         </h4>
     </div>
     <form action="live_submit.php" method="post">
         <?php
-            echo("<input type=\"hidden\" name=\"enteredBy\" value=\"" . $_SESSION['id'] . "\">");
+        echo("<input type=\"hidden\" name=\"enteredBy\" value=\"" . $_SESSION['id'] . "\">");
         ?>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -60,13 +60,13 @@ if (!isset($_GET['id'])) {
                         </tr>
                         <tr>
                             <td class="col-md-10" scope="row">Bot Number</td>
-                            <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="1" max="6" name="yellowScored"></td>
+                            <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="1" min="1" max="6" name="yellowScored"></td>
                         </tr>
                         <tr>
                             <td class="col-md-10" scope="row">Dead Bot</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="isDead" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="isDead" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -74,7 +74,7 @@ if (!isset($_GET['id'])) {
                             <td class="col-md-10" scope="row">Bot Show</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" checked="true" name="isShow" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" checked="true" name="isShow" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -107,7 +107,7 @@ if (!isset($_GET['id'])) {
                             <td class="col-md-10" scope="row">Stacked Level 1 Yellow Tote</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack0" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack0" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -115,7 +115,7 @@ if (!isset($_GET['id'])) {
                             <td class="col-md-10" scope="row">Stacked Level 2 Yellow Tote</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack1" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack1" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -123,7 +123,7 @@ if (!isset($_GET['id'])) {
                             <td class="col-md-10" scope="row">Stacked Level 3 Yellow Tote</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack2" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack2" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -139,7 +139,7 @@ if (!isset($_GET['id'])) {
                             <td class="col-md-10" scope="row">Mobility</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="mobility" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="mobility" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -291,14 +291,16 @@ if (!isset($_GET['id'])) {
             var inputArray = Array.prototype.slice.call(document.getElementsByTagName("input"), 0);
             for (inputIndex = 0; inputIndex < inputArray.length; inputIndex++) {
                 input = inputArray[inputIndex];
-                if (input.type.toLowerCase() !== "number") continue;
+                if (input.type.toLowerCase() !== "number")
+                    continue;
                 button = document.createElement("input");
                 button.type = "button";
                 button.className = "btn btn-danger";
                 button.value = "\u2212";
                 button.onclick = (function (inputElement) {
                     return function () {
-                        if (!isNaN(parseInt(inputElement.value))) inputElement.value = Math.max(parseInt(inputElement.value) - 1, 0);
+                        if (!isNaN(parseInt(inputElement.value)))
+                            inputElement.value = Math.max(parseInt(inputElement.value) - 1, inputElement.min);
                     };
                 })(input);
                 span = document.createElement("span");
@@ -312,7 +314,8 @@ if (!isset($_GET['id'])) {
                 button.value = "+";
                 button.onclick = (function (inputElement) {
                     return function () {
-                        if (!isNaN(parseInt(inputElement.value)) && parseInt(inputElement.value) < inputElement.max) inputElement.value = parseInt(inputElement.value) + 1;
+                        if (!isNaN(parseInt(inputElement.value)) && parseInt(inputElement.value) < inputElement.max)
+                            inputElement.value = parseInt(inputElement.value) + 1;
                     };
                 })(input);
                 span = document.createElement("span");

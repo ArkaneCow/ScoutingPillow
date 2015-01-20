@@ -69,7 +69,7 @@ include('header.php');
                             <td class="col-md-10" scope="row">Autonomous Functionality</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="auto" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="auto" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -83,7 +83,7 @@ include('header.php');
                             <td class="col-md-10" scope="row">Autonomous Mobility</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="autoMobility" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="autoMobility" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -103,7 +103,7 @@ include('header.php');
                             <td class="col-md-10" scope="row">Coopertition</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="coop" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="coop" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -125,7 +125,7 @@ include('header.php');
                             <td class="col-md-10" scope="row">Can you go on the scoring platform in Teleop?</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="teleScoringPlatform" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="teleScoringPlatform" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -133,7 +133,7 @@ include('header.php');
                             <td class="col-md-10" scope="row">Can you push containers in Teleop?</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="telePushContainer" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="telePushContainer" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -141,7 +141,7 @@ include('header.php');
                             <td class="col-md-10" scope="row">Can you put noodles in containers in Teleop?</td>
                             <td class="col-md-2" scope="row">
                                 <div align="center" class="checkbox">
-                                        <input type="checkbox" class="checkbox-field" style="position: relative;" name="teleNoodleContainer" value="1">
+                                    <input type="checkbox" class="checkbox-field" style="position: relative;" name="teleNoodleContainer" value="1">
                                 </div>
                             </td>
                         </tr>
@@ -180,7 +180,7 @@ include('header.php');
                 button.onclick = (function (inputElement) {
                     return function () {
                         if (!isNaN(parseInt(inputElement.value)))
-                            inputElement.value = Math.max(parseInt(inputElement.value) - 1, 0);
+                            inputElement.value = Math.max(parseInt(inputElement.value) - 1, inputElement.min);
                     };
                 })(input);
                 span = document.createElement("span");
