@@ -43,7 +43,7 @@ if (!isset($_GET['id'])) {
                     <tbody>
                         <tr>
                             <td scope="row">Scored Yellow Tote</td>
-                            <td scope="row"><input type="number" class="form-control" name="scoredYellow"></td>
+                            <td scope="row"><input type="number" class="form-control" value="0" min="0" max="3" name="scoredYellow"></td>
                         </tr>
                         <tr>
                             <td scope="row">Manipulated Yellow Tote</td>
@@ -117,7 +117,7 @@ if (!isset($_GET['id'])) {
                 button.value = "+";
                 button.onclick = (function (inputElement) {
                     return function () {
-                        if (!isNaN(parseInt(inputElement.value))) inputElement.value = parseInt(inputElement.value) + 1;
+                        if (!isNaN(parseInt(inputElement.value)) && parseInt(inputElement.value) < inputElement.max) inputElement.value = parseInt(inputElement.value) + 1;
                     };
                 })(input);
                 span = document.createElement("span");
