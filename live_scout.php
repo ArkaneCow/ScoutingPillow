@@ -16,6 +16,9 @@ if (!isset($_GET['id'])) {
 }
 ?>
 <div class="container">
+    <div class="page-header">
+        <h3>Live Scouting</h3>
+    </div>
     <?php
     $event_id = $_GET['id'];
     $db_query = mysql_query("SELECT * FROM events WHERE id=" . $event_id);
@@ -87,6 +90,43 @@ if (!isset($_GET['id'])) {
             </div>
         </div>
     </form>
+    <script type="text/javascript">
+        (function () {
+            var button, span, input, inputIndex;
+            var inputArray = Array.prototype.slice.call(document.getElementsByTagName("input"), 0);
+            for (inputIndex = 0; inputIndex < inputArray.length; inputIndex++) {
+                input = inputArray[inputIndex];
+                if (input.type.toLowerCase() !== "number") continue;
+                button = document.createElement("input");
+                button.type = "button";
+                button.className = "btn btn-default";
+                button.value = "\u2212";
+                button.onclick = (function (inputElement) {
+                    return function () {
+                        if (!isNaN(parseInt(inputElement.value))) inputElement.value = Math.max(parseInt(inputElement.value) - 1, 0);
+                    };
+                })(input);
+                span = document.createElement("span");
+                span.className = "input-group-btn";
+                span.appendChild(button);
+                input.parentNode.className = "input-group";
+                input.parentNode.insertBefore(span, input);
+                button = document.createElement("input");
+                button.type = "button";
+                button.className = "btn btn-default";
+                button.value = "+";
+                button.onclick = (function (inputElement) {
+                    return function () {
+                        if (!isNaN(parseInt(inputElement.value))) inputElement.value = parseInt(inputElement.value) + 1;
+                    };
+                })(input);
+                span = document.createElement("span");
+                span.className = "input-group-btn";
+                span.appendChild(button);
+                input.parentNode.insertBefore(span, input.nextSibling);
+            }
+        })();
+    </script>
 </div>
 <?php
 include('footer.php');
