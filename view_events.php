@@ -12,7 +12,7 @@
 ?>
 <div class="container">
     <div class="page-header">
-        <h3>Pre Scouting</h3>
+        <h3>Scouting Events</h3>
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">

@@ -5,3 +5,7 @@ body {
 .number-field {
     text-align: center;
 }
+.checkbox-field {
+    width: 20px;
+    height: 20px;
+}
