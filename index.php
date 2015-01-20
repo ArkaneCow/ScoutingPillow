@@ -53,8 +53,7 @@
             echo("<h2 class=\"panel-title\">Scouting</h2>");
             echo("</div>");
             echo("<div class=\"panel-body\">");
-            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">View Events</a>");
-            echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Data History</a>");
+            echo("<a class=\"btn btn-lg\" href=\"view_events.php\" role=\"button\">View Events</a>");
             echo("</div>");
             echo("</div>");
         }
