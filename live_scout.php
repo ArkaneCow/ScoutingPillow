@@ -42,40 +42,74 @@ if (!isset($_GET['id'])) {
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row">Scored Yellow Tote</td>
-                            <td scope="row"><input type="number" class="form-control" value="0" min="0" max="3" name="scoredYellow"></td>
+                            <td class="col-md-6" scope="row">Scored Yellow Tote</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="3" name="yellowScored"></td>
                         </tr>
                         <tr>
-                            <td scope="row">Manipulated Yellow Tote</td>
-                            <td scope="row"></td>
+                            <td class="col-md-6" scope="row">Manipulated Yellow Tote</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="3" name="yellowPossess"></td>
                         </tr>
                         <tr>
-                            <td scope="row">Stacked Level 1 Yellow Tote</td>
-                            <td scope="row"></td>
+                            <td class="col-md-6" scope="row">Stacked Level 1 Yellow Tote</td>
+                            <td scope="row">
+                                <div align="center" class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="yellowStack0" value="1">
+                                        Level 1
+                                    </label>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td scope="row">Stacked Level 2 Yellow Tote</td>
-                            <td scope="row"></td>
+                            <td class="col-md-6" scope="row">Stacked Level 2 Yellow Tote</td>
+                            <td scope="row">
+                                <div align="center" class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="yellowStack1" value="1">
+                                        Level 2
+                                    </label>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td scope="row">Stacked Level 3 Yellow Tote</td>
-                            <td scope="row"></td>
+                            <td class="col-md-6" scope="row">Stacked Level 3 Yellow Tote</td>
+                            <td scope="row">
+                                <div align="center" class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="yellowStack2" value="1">
+                                        Level 3
+                                    </label>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td scope="row">Containers Scored</td>
-                            <td scope="row"></td>
+                            <td class="col-md-6" scope="row">Autonomous Containers Moved</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="autoContainerMoved"></td>
                         </tr>
                         <tr>
-                            <td scope="row">Mobility</td>
-                            <td scope="row"></td>
+                            <td class="col-md-6" scope="row">Step Containers Moved</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="stepContainerMoved"></td>
                         </tr>
                         <tr>
-                            <td scope="row">Manipulated Grey Totes</td>
-                            <td scope="row"></td>
+                            <td class="col-md-6" scope="row">Mobility</td>
+                            <td scope="row">
+                                <div align="center" class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="mobility" value="1">
+                                        Mobile
+                                    </label>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td scope="row">Autonomous Comments</td>
-                            <td scope="row"></td>
+                            <td class="col-md-6" scope="row">Manipulated Grey Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="6" name="greyToteMoved"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-6" scope="row">Autonomous Comments</td>
+                            <td scope="row">
+                                <textarea class="form-control" rows="3" name="autoComments"></textarea>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
