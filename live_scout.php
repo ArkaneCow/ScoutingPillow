@@ -96,6 +96,10 @@ if (!isset($_GET['id'])) {
                     </thead>
                     <tbody>
                         <tr>
+                            <td class="col-md-10" scope="row">Autonomous Start</td>
+                            <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="1" max="10" name="start"></td>
+                        </tr>
+                        <tr>
                             <td class="col-md-10" scope="row">Scored Yellow Tote</td>
                             <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="3" name="yellowScored"></td>
                         </tr>
