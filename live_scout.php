@@ -52,7 +52,7 @@ if (!isset($_GET['id'])) {
                     <tbody>
                         <tr>
                             <td class="col-md-10" scope="row">Match Number</td>
-                            <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="10000" name="matchNumber"></td>
+                            <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="1" min="0" max="10000" name="matchNumber"></td>
                         </tr>
                         <tr>
                             <td class="col-md-10" scope="row">Team Number</td>
