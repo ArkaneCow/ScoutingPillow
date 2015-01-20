@@ -33,8 +33,8 @@ if (!isset($_GET['id'])) {
             ?>
         </h4>
     </div>
-    <form action="live_submit.php" method="post">
         <?php
+        echo("<form action=\"live_submit.php?id=" . $_GET['id'] . "\" method=\"post\">");
         echo("<input type=\"hidden\" name=\"enteredBy\" value=\"" . $_SESSION['id'] . "\">");
         ?>
         <div class="panel panel-default">
@@ -97,7 +97,7 @@ if (!isset($_GET['id'])) {
                     <tbody>
                         <tr>
                             <td class="col-md-10" scope="row">Autonomous Start</td>
-                            <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="1" max="10" name="start"></td>
+                            <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="1" min="1" max="10" name="start"></td>
                         </tr>
                         <tr>
                             <td class="col-md-10" scope="row">Scored Yellow Tote</td>
