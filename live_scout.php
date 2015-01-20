@@ -35,6 +35,9 @@ if (!isset($_GET['id'])) {
     </div>
     <form action="live_submit.php">
         <div class="panel panel-default">
+            
+        </div>
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h2 class="panel-title">Autonomous</h2>
             </div>
@@ -80,11 +83,11 @@ if (!isset($_GET['id'])) {
                             </td>
                         </tr>
                         <tr>
-                            <td class="col-md-10" scope="row">Autonomous Containers Moved</td>
+                            <td class="col-md-10" scope="row">Autonomous Recycling Containers Moved</td>
                             <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="autoContainerMoved"></td>
                         </tr>
                         <tr>
-                            <td class="col-md-10" scope="row">Step Containers Moved</td>
+                            <td class="col-md-10" scope="row">Step Recycling Containers Moved</td>
                             <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="stepContainerMoved"></td>
                         </tr>
                         <tr>
@@ -97,7 +100,7 @@ if (!isset($_GET['id'])) {
                         </tr>
                         <tr>
                             <td class="col-md-10" scope="row">Manipulated Grey Totes</td>
-                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="6" name="greyToteMoved"></td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="greyToteMoved"></td>
                         </tr>
                         <tr>
                             <td class="col-md-10" scope="row">Autonomous Comments</td>
@@ -123,8 +126,106 @@ if (!isset($_GET['id'])) {
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="col-md-10" scope="row">Scored Yellow Tote</td>
-                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="3" name="yellowScored"></td>
+                            <td class="col-md-10" scope="row">Manipulated Grey Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="totePossess"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 1 Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="tote0"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 2 Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="tote1"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 3 Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="tote2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 4 Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="tote3"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 5 Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="tote4"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 6 Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="tote5"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Manipulated Recycle Containers</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="containerPossess"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 1 Containers</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="container0"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 2 Containers</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="container1"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 3 Containers</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="container2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 4 Containers</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="container3"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 5 Containers</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="container4"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 6 Containers</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="container5"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Noodles - Trash</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="10" name="noodleTrash"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Noodles - Landfill</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="10" name="noodleLand"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Noodles - Other</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="10" name="noodleOther"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 1 Coopertition Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="6" name="coopTote0"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 2 Coopertition Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="6" name="coopTote1"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 3 Coopertition Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="6" name="coopTote2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Level 4 Coopertition Totes</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="6" name="coopTote3"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Pickup - Landfill</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="pickupLand"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Pickup - Human</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="pickupHuman"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Pickup - Other</td>
+                            <td scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="pickupOther"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-10" scope="row">Teleop Comments</td>
+                            <td scope="row">
+                                <textarea class="form-control" rows="3" name="teleComments"></textarea>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
