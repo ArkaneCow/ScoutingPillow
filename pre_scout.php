@@ -47,7 +47,15 @@ include('header.php');
                 <tbody>
                     <tr>
                         <td class="col-md-10" scope="row">Team Number</td>
-                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="10000" name="teamNumber"></td>
+                        <td class="col-md-2" scope="row">
+                            <?php
+                            if (isset($_GET['team'])) {
+                                echo("<input type=\"number\" class=\"form-control number-field\" value=\"" . $_GET['team'] . "\" min=\"0\" max=\"10000\" name=\"teamNumber\">");
+                            } else {
+                                echo("<input type=\"number\" class=\"form-control number-field\" value=\"0\" min=\"0\" max=\"10000\" name=\"teamNumber\">");
+                            }
+                            ?>
+                        </td>
                     </tr>
                     <tr>
                         <td class="col-md-10" scope="row">Talked To</td>

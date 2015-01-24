@@ -37,7 +37,7 @@ include('header.php');
             <table class="container">
                 <thead>
                     <tr>
-                        <th>Match Number</th>
+                        <th>Match #</th>
                         <th>Red 1</th>
                         <th>Red 2</th>
                         <th>Red 3</th>
@@ -55,22 +55,22 @@ include('header.php');
                         echo $match['id'];
                         echo("</td>");
                         echo("<td scope=\"row\">");
-                        echo $match['red1'];
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red1'] . "&match=" . $match['id'] . "\" class=\"btn btn-danger\">" . $match['red1'] . "</a>");
                         echo("</td>");
                         echo("<td scope=\"row\">");
-                        echo $match['red2'];
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red2'] . "&match=" . $match['id'] . "\" class=\"btn btn-danger\">" . $match['red2'] . "</a>");
                         echo("</td>");
                         echo("<td scope=\"row\">");
-                        echo $match['red3'];
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red3'] . "&match=" . $match['id'] . "\" class=\"btn btn-danger\">" . $match['red3'] . "</a>");
                         echo("</td>");
                         echo("<td scope=\"row\">");
-                        echo $match['blue1'];
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['blue1'] . "&match=" . $match['id'] . "\" class=\"btn btn-primary\">" . $match['blue1'] . "</a>");
                         echo("</td>");
                         echo("<td scope=\"row\">");
-                        echo $match['blue2'];
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['blue2'] . "&match=" . $match['id'] . "\" class=\"btn btn-primary\">" . $match['blue2'] . "</a>");
                         echo("</td>");
                         echo("<td scope=\"row\">");
-                        echo $match['blue3'];
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['blue3'] . "&match=" . $match['id'] . "\" class=\"btn btn-primary\">" . $match['blue3'] . "</a>");
                         echo("</td>");
                         echo("</tr>");
                     }
