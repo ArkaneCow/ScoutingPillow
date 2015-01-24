@@ -7,13 +7,13 @@
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript">
-            $(window).load(function() {
-                <?php
-                if (isset($_GET['error'])) {
-                    $error_message = $_GET['error'];
-                    echo("alert(\"Error: " . $error_message . "\");"); //XSS vulnerability                    
-                }
-                ?>
+            $(window).load(function () {
+<?php
+if (isset($_GET['error'])) {
+    $error_message = $_GET['error'];
+    echo("alert(\"Error: " . $error_message . "\");"); //XSS vulnerability                    
+}
+?>
             });
         </script>
     </head>

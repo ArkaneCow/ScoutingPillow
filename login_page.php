@@ -1,14 +1,14 @@
 <?php
-    session_start();
-    include('config.php');
+session_start();
+include('config.php');
 ?>
 <?php
-    if (isset($_SESSION['user'])) {
-        header('Location: index.php');
-    }
+if (isset($_SESSION['user'])) {
+    header('Location: index.php');
+}
 ?>
 <?php
-    include('header.php');
+include('header.php');
 ?>
 
 <div class="container">
@@ -41,18 +41,18 @@
         </div>
         <div class="panel-body">
             <?php
-                require_once('openid.php');
-                $openid = new LightOpenID("localhost");
-                $openid->identity = 'https://www.google.com/accounts/o8/id';
-                $openid->required = array(
-                    'contact/email'
-                );
-                $openid->returnUrl = "login.php";
+            require_once('openid.php');
+            $openid = new LightOpenID("localhost");
+            $openid->identity = 'https://www.google.com/accounts/o8/id';
+            $openid->required = array(
+                'contact/email'
+            );
+            $openid->returnUrl = "login.php";
             ?>
             <a class="btn btn-primary btn-danger" href="<?php echo $openid->authUrl() ?>"> Login with Google</a>
         </div>
     </div>
 </div>
 <?php
-    include('footer.php');
+include('footer.php');
 ?>

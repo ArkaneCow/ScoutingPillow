@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    include('config.php');
+session_start();
+include('config.php');
 ?>
 <?php
-    include('header.php');
+include('header.php');
 ?>
 <div class ="container">
     <div class ="page-header">
@@ -40,5 +40,5 @@
 </div>
 
 <?php
-    include('footer.php');
+include('footer.php');
 ?>

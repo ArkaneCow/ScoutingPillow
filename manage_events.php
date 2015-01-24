@@ -1,14 +1,14 @@
 <?php
-    session_start();
-    include('config.php');
+session_start();
+include('config.php');
 ?>
 <?php
-    if (!isset($_SESSION['user']) || $_SESSION['rank'] > 1) {
-        header('Location: index.php');
-    }
+if (!isset($_SESSION['user']) || $_SESSION['rank'] > 1) {
+    header('Location: index.php');
+}
 ?>
 <?php
-    include('header.php');
+include('header.php');
 ?>
 <div class="container">
     <div class="page-header">
@@ -29,17 +29,17 @@
                 </thead>
                 <tbody>
                     <?php
-                        $db_query = mysql_query("SELECT * FROM events");
-                        while ($record = mysql_fetch_array($db_query)) {
-                            echo("<tr>");
-                            echo("<td scope=\"row\">" . $record['id'] . "</td>");
-                            echo("<td scope=\"row\">" . $record['eventName'] . "</td>");
-                            echo("<td scope=\"row\">");
-                            echo("<a class=\"btn\" href=\"view_event.php?id=" . $record['id'] . "\" role=\"button\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>View</a>");
-                            echo("<a class=\"btn\" href=\"delete_event.php?id=" . $record['id'] . "\" role=\"button\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>Delete</a>");
-                            echo("</td>");
-                            echo("</tr>");
-                        }
+                    $db_query = mysql_query("SELECT * FROM events");
+                    while ($record = mysql_fetch_array($db_query)) {
+                        echo("<tr>");
+                        echo("<td scope=\"row\">" . $record['id'] . "</td>");
+                        echo("<td scope=\"row\">" . $record['eventName'] . "</td>");
+                        echo("<td scope=\"row\">");
+                        echo("<a class=\"btn\" href=\"view_event.php?id=" . $record['id'] . "\" role=\"button\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>View</a>");
+                        echo("<a class=\"btn\" href=\"delete_event.php?id=" . $record['id'] . "\" role=\"button\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>Delete</a>");
+                        echo("</td>");
+                        echo("</tr>");
+                    }
                     ?>
                 </tbody>
             </table>
@@ -62,5 +62,5 @@
     </div>
 </div>
 <?php
-    include('footer.php');
+include('footer.php');
 ?>

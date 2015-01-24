@@ -1,23 +1,23 @@
 <?php
-    session_start();
-    include('config.php');
+session_start();
+include('config.php');
 ?>
 <?php
-    if (!isset($_SESSION['user'])) {
-        header('Location: index.php');
-    }
-    if (!isset($_GET['id'])) {
-        header('Location: view_events.php');
-    }
-    $field_query = mysql_query("SELECT * FROM events WHERE id=" . $_GET['id']);
-    if (mysql_num_rows($field_query) != 1) {
-        header('Location: view_events.php');
-    }
-    $record = mysql_fetch_array($field_query);
-    $match_name = $record['prefixName'] . "_matches";
+if (!isset($_SESSION['user'])) {
+    header('Location: index.php');
+}
+if (!isset($_GET['id'])) {
+    header('Location: view_events.php');
+}
+$field_query = mysql_query("SELECT * FROM events WHERE id=" . $_GET['id']);
+if (mysql_num_rows($field_query) != 1) {
+    header('Location: view_events.php');
+}
+$record = mysql_fetch_array($field_query);
+$match_name = $record['prefixName'] . "_matches";
 ?>
 <?php
-    include('header.php');
+include('header.php');
 ?>
 <div class="container">
     <div class="page-header">
@@ -48,32 +48,32 @@
                 </thead>
                 <tbody>
                     <?php
-                        $db_query = mysql_query("SELECT * FROM " . $match_name);
-                        while ($match = mysql_fetch_array($db_query)) {
-                            echo("<tr>");
-                            echo("<td scope=\"row\">");
-                            echo $match['id'];
-                            echo("</td>");
-                            echo("<td scope=\"row\">");
-                            echo $match['red1'];
-                            echo("</td>");
-                            echo("<td scope=\"row\">");
-                            echo $match['red2'];
-                            echo("</td>");
-                            echo("<td scope=\"row\">");
-                            echo $match['red3'];
-                            echo("</td>");
-                            echo("<td scope=\"row\">");
-                            echo $match['blue1'];
-                            echo("</td>");
-                            echo("<td scope=\"row\">");
-                            echo $match['blue2'];
-                            echo("</td>");
-                            echo("<td scope=\"row\">");
-                            echo $match['blue3'];
-                            echo("</td>");
-                            echo("</tr>");
-                        }
+                    $db_query = mysql_query("SELECT * FROM " . $match_name);
+                    while ($match = mysql_fetch_array($db_query)) {
+                        echo("<tr>");
+                        echo("<td scope=\"row\">");
+                        echo $match['id'];
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo $match['red1'];
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo $match['red2'];
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo $match['red3'];
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo $match['blue1'];
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo $match['blue2'];
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo $match['blue3'];
+                        echo("</td>");
+                        echo("</tr>");
+                    }
                     ?>
                 </tbody>
             </table>
@@ -81,5 +81,5 @@
     </div>
 </div>
 <?php
-    include('footer.php');
+include('footer.php');
 ?>
