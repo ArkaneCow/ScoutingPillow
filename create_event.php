@@ -16,7 +16,7 @@ if (isset($new_event)) {
         die(mysql_error());
     }
     $matches_name = $new_prefix . "_matches";
-    $db_query = "CREATE TABLE " . $matches_name . "(id int(11) NOT NULL AUTO_INCREMENT, red1 int(4) NOT NULL, red2 int(4) NOT NULL, red3 int(4) NOT NULL, blue1 int(4) NOT NULL, blue2 int(4) NOT NULL, blue3 int(4) NOT NULL, PRIMARY KEY(id))";
+    $db_query = "CREATE TABLE " . $matches_name . "(id int(11) NOT NULL, red1 int(4) NOT NULL, red2 int(4) NOT NULL, red3 int(4) NOT NULL, blue1 int(4) NOT NULL, blue2 int(4) NOT NULL, blue3 int(4) NOT NULL, PRIMARY KEY(id))";
     if (!mysql_query($db_query)) {
         die(mysql_error());
     }

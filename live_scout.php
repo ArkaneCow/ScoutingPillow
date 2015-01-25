@@ -72,7 +72,15 @@ if (!isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td class="col-md-10" scope="row">Bot Number</td>
-                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="1" min="1" max="6" name="yellowScored"></td>
+                        <td class="col-md-2" scope="row">
+                            <?php
+                            if (isset($_GET['bot'])) {
+                                echo("<input type=\"number\" class=\"form-control number-field\" value=\"" . $_GET['bot'] . "\" min=\"1\" max=\"6\" name=\"botNumber\">");
+                            } else {
+                                echo("<input type=\"number\" class=\"form-control number-field\" value=\"1\" min=\"1\" max=\"6\" name=\"botNumber\">");
+                            }
+                            ?>
+                        </td>
                     </tr>
                     <tr>
                         <td class="col-md-10" scope="row">Dead Bot</td>
