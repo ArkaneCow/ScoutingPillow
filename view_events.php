@@ -37,6 +37,9 @@ include('header.php');
                         echo("<td>");
                         echo("<a href=\"pre_scout.php?id=" . $record['id'] . "\" class=\"btn\">Pre Scout</a>");
                         echo("<a href=\"match_list.php?id=" . $record['id'] . "\" class=\"btn\">Live Scout</a>");
+                        if ($_SESSION['rank'] < 3) {
+                            echo("<a href=\"view_data.php?id=" . $record['id'] . "\" class=\"btn btn-primary\">Raw Data</a>");
+                        }
                         echo("</td>");
                         echo("</tr>");
                     }

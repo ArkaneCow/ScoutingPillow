@@ -6,6 +6,9 @@ include('config.php');
 if (!isset($_SESSION['user'])) {
     header('Location: index.php');
 }
+if (!isset($_GET['id'])) {
+    header('Location: index.php');
+}
 ?>
 <?php
 include('header.php');

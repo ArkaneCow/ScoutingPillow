@@ -35,17 +35,6 @@ include('header.php');
         echo("</div>");
         echo("</div>");
     }
-    if ($_SESSION['rank'] <= 2) {
-        echo("<div class=\"panel panel-default\">");
-        echo("<div class=\"panel-heading\">");
-        echo("<h2 class=\"panel-title\">Data</h2>");
-        echo("</div>");
-        echo("<div class=\"panel-body\">");
-        echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">View Raw Data</a>");
-        echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Team Database</a>");
-        echo("</div>");
-        echo("</div>");
-    }
     if ($_SESSION['rank'] <= 3) {
         echo("<div class=\"panel panel-default\">");
         echo("<div class=\"panel-heading\">");
