@@ -23,7 +23,7 @@ include('header.php');
         echo("</div>");
         echo("<div class=\"panel-body\">");
         echo("<a class=\"btn btn-lg\" href=\"manage_users.php\" role=\"button\">Manage Users</a>");
-        echo("<a class=\"btn btn-lg\" href=\"#\" role=\"button\">Approve Registrations</a>");
+        echo("<a class=\"btn btn-lg\" href=\"manage_registers.php\" role=\"button\">Registrations</a>");
         echo("</div>");
         echo("</div>");
         echo("<div class=\"panel panel-default\">");

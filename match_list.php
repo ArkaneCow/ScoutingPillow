@@ -113,9 +113,6 @@ include('header.php');
                                 <input type="number" min="1" max="9999" value="<?php echo($last_match + 1); ?>" class="form-control number-field" name="match" />
                             </td>
                             <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="match" />
-                            </td>
-                            <td scope="row">
                                 <input type="number" min="1" max="9999" class="form-control number-field" name="red1" />
                             </td>
                             <td scope="row">
