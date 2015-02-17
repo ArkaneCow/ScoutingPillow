@@ -53,7 +53,7 @@ include('header.php');
                         <td scope="row">Matches</td>
                         <td scope="row">
                             <?php
-                            echo("<a href=\"view_matches.php?id=" . $record['id'] . "\" class=\"btn\">Matches</a>");
+                            echo("<a href=\"match_list.php?id=" . $record['id'] . "\" class=\"btn\">Matches</a>");
                             ?>
                         </td>
                     </tr>
