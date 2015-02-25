@@ -48,9 +48,18 @@ $teleNoodleContainer = $_POST['teleNoodleContainer'];
 if (!isset($teleNoodleContainer) || $teleNoodleContainer != '1') {
     $teleNoodleContainer = '0';
 }
-$pictures = $_POST['pictures'];
+$time = time();
+$upload_file = "";
+if ($_FILES['media']['name']) {
+    $upload_dir = "media/";
+    $upload_file = $upload_dir . $time . basename($_FILES['media']['name']);
+    $imageFileType = pathinfo($upload_file, PATHINFO_EXTENSION);
+    $check = getimagesize($_FILES['media']['tmp_name']);
+    move_uploaded_file($_FILES['media']['tmp_name'], $upload_file);
+}
 $additionalComments = $_POST['additionalComments'];
 $prescout_name = $record['prefixName'] . "_prescout";
+$pictures = $upload_file; 
 $db_query = "INSERT INTO " . $prescout_name . "(teamNumber, talkedTo, goals, manipulator, wheels, auto, autoStrategy, autoMobility, autoPushTotes, autoStackTotes, autoPushContainers, coop, teleStrategy, teleStackTotes, teleScoringPlatform, telePushContainer, teleNoodleContainer, pictures, additionalComments) VALUES('" . $teamNumber . "','" . $talkedTo . "','" . $goals . "','" . $manipulator . "','" . $wheels . "','" . $auto . "','" . $autoStrategy . "','" . $autoMobility . "','" . $autoPushTotes . "','" . $autoStackTotes . "','" . $autoPushContainers . "','" . $coop . "','" . $teleStrategy . "','" . $teleStackTotes . "','" . $teleScoringPlatform . "','" . $telePushContainer . "','" . $teleNoodleContainer . "','" . $pictures . "','" . $additionalComments . "')";
 if (!mysql_query($db_query)) {
     die(mysql_error());

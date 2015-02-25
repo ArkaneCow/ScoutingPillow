@@ -32,7 +32,7 @@ include('header.php');
         </h4>
     </div>
     <?php
-    echo("<form action=\"pre_submit.php?id=" . $_GET['id'] . "\" method=\"post\">");
+    echo("<form action=\"pre_submit.php?id=" . $_GET['id'] . "\" method=\"post\" enctype=\"multipart/form-data\">");
     ?>
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -163,6 +163,14 @@ include('header.php');
                 </tbody>
             </table>
 
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Media</h2>
+        </div>
+        <div class="panel-body">
+            <input type="file" name="media" class="btn btn-primary">
         </div>
     </div>
     <div class="panel panel-default">
