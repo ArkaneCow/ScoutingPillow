@@ -111,25 +111,25 @@ include('header.php');
                     <tbody>
                         <tr>
                             <td scope="row">
-                                <input type="number" min="1" max="9999" value="<?php echo($last_match + 1); ?>" class="form-control number-field" name="match" />
+                                <input type="number" min="1" max="9999" style="min-width: 70px;" value="<?php echo($last_match + 1); ?>" class="form-control number-field" name="match" />
                             </td>
                             <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue1" />
+                                <input type="number" min="1" max="9999" style="min-width: 70px;" class="form-control number-field" name="blue1" />
                             </td>
                             <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue2" />
+                                <input type="number" min="1" max="9999" style="min-width: 70px;" class="form-control number-field" name="blue2" />
                             </td>
                             <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue3" />
+                                <input type="number" min="1" max="9999" style="min-width: 70px;" class="form-control number-field" name="blue3" />
                             </td>
                             <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="red1" />
+                                <input type="number" min="1" max="9999" style="min-width: 70px;" class="form-control number-field" name="red1" />
                             </td>
                             <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="red2" />
+                                <input type="number" min="1" max="9999" style="min-width: 70px;" class="form-control number-field" name="red2" />
                             </td>
                             <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="red3" />
+                                <input type="number" min="1" max="9999" style="min-width: 70px;" class="form-control number-field" name="red3" />
                             </td>
                             <td>
                                 <input type="submit" value="Add" class="btn btn-primary" />
