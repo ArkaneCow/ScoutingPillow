@@ -83,10 +83,10 @@ include('header.php');
         if ($_SESSION['rank'] <= 1 || $_SESSION['id'] == $_GET ['id']) {
             echo("<div class=\"panel panel-default\">");
             echo("<div class=\"panel-heading\">");
-            echo("<h2 class=\"panel-title\">Event Info</h2>");
+            echo("<h2 class=\"panel-title\">User History</h2>");
             echo("</div>");
             echo("<div class=\"panel-body\">");
-
+            
             echo("</div>");
             echo("</div>");
         }

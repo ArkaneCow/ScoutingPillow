@@ -42,7 +42,7 @@ include('header.php');
         <div class="panel-body">
             <?php
             require_once('openid.php');
-            $openid = new LightOpenID("localhost");
+            $openid = new LightOpenID("scouting.prhsrobotics.com");
             $openid->identity = 'https://www.google.com/accounts/o8/id';
             $openid->required = array(
                 'contact/email'
