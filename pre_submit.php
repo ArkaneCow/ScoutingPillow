@@ -53,8 +53,6 @@ $upload_file = "";
 if ($_FILES['media']['name']) {
     $upload_dir = "media/";
     $upload_file = $upload_dir . $time . basename($_FILES['media']['name']);
-    $imageFileType = pathinfo($upload_file, PATHINFO_EXTENSION);
-    $check = getimagesize($_FILES['media']['tmp_name']);
     move_uploaded_file($_FILES['media']['tmp_name'], $upload_file);
 }
 $additionalComments = $_POST['additionalComments'];
