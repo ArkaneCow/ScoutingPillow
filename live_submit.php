@@ -8,7 +8,7 @@ include('config.php');
 if (!isset($_SESSION['user'])) {
     header('Location: index.php');
 }
-$field_query = mysql_query("SELECT * FROM events WHERE id=" . $_GET['id']));
+$field_query = mysql_query("SELECT * FROM events WHERE id=" . $_GET['id']);
 if (mysql_num_rows($field_query) != 1) {
     header('Location: live_scout.php');
 }
