@@ -15,6 +15,15 @@ if (!isset($_GET['id'])) {
     header('Location: index.php');
 }
 ?>
+<script type="text/javascript">
+    $('#formofdeath').on("keyup keypress", function (e) {
+        var code = e.keyCode || e.which;
+        if (code == 13) {
+            e.preventDefault();
+            return false;
+        }
+    });
+</script>
 <div class="container">
     <?php
     $event_id = $_GET['id'];
@@ -34,7 +43,7 @@ if (!isset($_GET['id'])) {
         </h4>
     </div>
     <?php
-    echo("<form action=\"live_submit.php?id=" . $_GET['id'] . "\" method=\"post\" id=\"form\">");
+    echo("<form action=\"live_submit.php?id=" . $_GET['id'] . "\" method=\"post\" id=\"formofdeath\">");
     echo("<input type=\"hidden\" name=\"enteredBy\" value=\"" . $_SESSION['id'] . "\">");
     ?>
     <div class="panel panel-default">

@@ -13,6 +13,15 @@ if (!isset($_GET['id'])) {
 <?php
 include('header.php');
 ?>
+<script type="text/javascript">
+    $('#formofdeath').on("keyup keypress", function (e) {
+        var code = e.keyCode || e.which;
+        if (code == 13) {
+            e.preventDefault();
+            return false;
+        }
+    });
+</script>
 <div class="container">
     <?php
     $event_id = $_GET['id'];
@@ -32,7 +41,7 @@ include('header.php');
         </h4>
     </div>
     <?php
-    echo("<form action=\"pre_submit.php?id=" . $_GET['id'] . "\" method=\"post\" enctype=\"multipart/form-data\">");
+    echo("<form action=\"pre_submit.php?id=" . $_GET['id'] . "\" method=\"post\" enctype=\"multipart/form-data\" id=\"formofdeath\">");
     ?>
     <div class="panel panel-default">
         <div class="panel-heading">
