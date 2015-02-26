@@ -34,7 +34,7 @@ if (!isset($_GET['id'])) {
         </h4>
     </div>
     <?php
-    echo("<form action=\"live_submit.php?id=" . $_GET['id'] . "\" method=\"post\">");
+    echo("<form action=\"live_submit.php?id=" . $_GET['id'] . "\" method=\"post\" id=\"form\">");
     echo("<input type=\"hidden\" name=\"enteredBy\" value=\"" . $_SESSION['id'] . "\">");
     ?>
     <div class="panel panel-default">
@@ -153,20 +153,20 @@ if (!isset($_GET['id'])) {
                         </td>
                     </tr>
                     <tr>
-                        <td class="col-md-10" scope="row">Autonomous Recycling Containers Moved</td>
-                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="autoContainerMoved"></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-10" scope="row">Step Recycling Containers Moved</td>
-                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="stepContainerMoved"></td>
-                    </tr>
-                    <tr>
                         <td class="col-md-10" scope="row">Mobility</td>
                         <td class="col-md-2" scope="row">
                             <div align="center" class="checkbox">
                                 <input type="checkbox" class="checkbox-field" style="position: relative;" name="mobility" value="1">
                             </div>
                         </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Autonomous Recycling Containers Moved</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="autoContainerMoved"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Step Recycling Containers Moved</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="stepContainerMoved"></td>
                     </tr>
                     <tr>
                         <td class="col-md-10" scope="row">Manipulated Grey Totes</td>
