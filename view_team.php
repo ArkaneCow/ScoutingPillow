@@ -74,7 +74,11 @@ include('header.php');
                                 echo("<tr>");
                                 $key = $row['Field'];
                                 echo("<td scope=\"row\">" . $row['Field'] . "</td>");
-                                $value = $datum[$key];
+                                if (strcmp($key, "pictures") == 0) {
+                                    $value = "<a href=\"" . $value . "\"><img src=\"" . $value . "\" style=\"max-height: 350px;\" /></a>";
+                                } else {
+                                    $value = $datum[$key];
+                                }
                                 echo("<td scope=\"row\">" . $value . "</td>");
                                 echo("</tr>");
                             }
