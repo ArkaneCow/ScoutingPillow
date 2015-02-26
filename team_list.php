@@ -84,38 +84,16 @@ include('header.php');
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Match #</th>
-                            <th>Red 1</th>
-                            <th>Red 2</th>
-                            <th>Red 3</th>
-                            <th>Blue 1</th>
-                            <th>Blue 2</th>
-                            <th>Blue 3</th>
-                            <th>Action</th>
+                            <th>Team #</th>
+                            <th>Team Name</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td scope="row">
-                                <input type="number" min="1" max="9999" value="<?php echo($last_match + 1); ?>" class="form-control number-field" name="match" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="red1" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="red2" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="red3" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue1" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue2" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue3" />
+                                <input type="number" min="1" max="9999" value="1" class="form-control number-field" name="teamNumber" />
+                            </td><td scope="row">
+                                <input type="text" class="form-control number-field" name="teamName" />
                             </td>
                             <td>
                                 <input type="submit" value="Add" class="btn btn-primary" />
