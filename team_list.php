@@ -15,6 +15,7 @@ if (mysql_num_rows($field_query) != 1) {
 }
 $record = mysql_fetch_array($field_query);
 $teams_name = $record['prefixName'] . "_teams";
+$prescout_name = $record['prefixName'] . "_prescout"
 ?>
 <?php
 include('header.php');
@@ -45,10 +46,22 @@ include('header.php');
                 <tbody>
                     <?php
                     $db_query = mysql_query("SELECT * FROM " . $teams_name);
-                    while ($match = mysql_fetch_array($db_query)) {
+                    while ($team = mysql_fetch_array($db_query)) {
                         echo("<tr>");
                         echo("<td scope=\"row\">");
-                        
+                        echo($team['teamNumber']);
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo($team['teamName']);
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo("<a href=\"view_team.php?id=" . $_GET['id'] . "&team=" . $team['teamNumber'] . "\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>View</a>");
+                        $prescout_query = mysql_query("SELECT * FROM " . $prescout_name);
+                        if (mysql_num_rows($prescout_query) > 0) {
+                            echo("<a href=\"pre_scout.php?id=" . $_GET['id'] . "&team=" . $team['teamNumber'] . "\" class=\"btn btn-danger\">Prescout</a>");
+                        } else {
+                            echo("<a href=\"pre_scout.php?id=" . $_GET['id'] . "&team=" . $team['teamNumber'] . "\" class=\"btn\">Prescout</a>");
+                        }
                         echo("</td>");
                         echo("</tr>");
                     }
@@ -112,9 +125,9 @@ include('header.php');
                 </table>
             </div>
         </div>
-    <?php
+        <?php
         echo("</form>");
-    ?>
+        ?>
         <?php
     } // end add match block
     ?>

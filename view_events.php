@@ -35,7 +35,7 @@ include('header.php');
                         echo("<td>" . $record['id'] . "</td>");
                         echo("<td>" . $record['eventName'] . "</td>");
                         echo("<td>");
-                        echo("<a href=\"pre_scout.php?id=" . $record['id'] . "\" class=\"btn\">Pre Scout</a>");
+                        echo("<a href=\"team_list.php?id=" . $record['id'] . "\" class=\"btn\">Pre Scout</a>");
                         echo("<a href=\"match_list.php?id=" . $record['id'] . "\" class=\"btn\">Live Scout</a>");
                         echo("<a href=\"view_data.php?id=" . $record['id'] . "\" class=\"btn btn-primary\">Raw Data</a>");
                         echo("</td>");

@@ -61,7 +61,7 @@ include('header.php');
                         <td scope="row">Teams</td>
                         <td scope="row">
                             <?php
-                            echo("<a href=\"#\" class=\"btn\">Teams</a>");
+                            echo("<a href=\"team_list.php?id=" . $record['id'] . "\" class=\"btn\">Teams</a>");
                             ?>
                         </td>
                     </tr>
