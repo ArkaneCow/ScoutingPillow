@@ -194,9 +194,18 @@ if (!isset($_GET['id'])) {
                     </tr>
                 </thead>
                 <tbody>
+                    <input type="hidden" value="-1" name="totePossess">
                     <tr>
-                        <td class="col-md-10" scope="row">Manipulated Grey Totes</td>
-                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="totePossess"></td>
+                        <td class="col-md-10" scope="row">Pickup - Landfill</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="pickupLand"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Pickup - Human</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="pickupHuman"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Pickup - Other</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="pickupOther"></td>
                     </tr>
                     <tr>
                         <td class="col-md-10" scope="row">Level 1 Totes</td>
@@ -277,18 +286,6 @@ if (!isset($_GET['id'])) {
                     <tr>
                         <td class="col-md-10" scope="row">Level 4 Coopertition Totes</td>
                         <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="6" name="coopTote3"></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-10" scope="row">Pickup - Landfill</td>
-                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="pickupLand"></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-10" scope="row">Pickup - Human</td>
-                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="pickupHuman"></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-10" scope="row">Pickup - Other</td>
-                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="pickupOther"></td>
                     </tr>
                     <tr>
                         <td class="col-md-10" scope="row">Teleop Comments</td>
