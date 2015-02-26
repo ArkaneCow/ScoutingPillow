@@ -107,6 +107,7 @@ if (!isset($_GET['id'])) {
             <h2 class="panel-title">Autonomous</h2>
         </div>
         <div class="panel-body">
+            <img src="img/field.png" style="max-height: 230px;" />
             <table class="table">
                 <thead>
                     <tr>
@@ -116,9 +117,7 @@ if (!isset($_GET['id'])) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="col-md-10" scope="row" style="overflow-x: auto;">Autonomous Start
-                        <img src="img/field.png" style="max-width: 300px;" />
-                        </td>
+                        <td class="col-md-10" scope="row">Autonomous Start</td>
                         <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="1" min="1" max="10" name="start"></td>
                     </tr>
                     <tr>
