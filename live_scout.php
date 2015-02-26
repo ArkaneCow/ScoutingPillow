@@ -125,70 +125,75 @@ if (!isset($_GET['id'])) {
                 </thead>
                 <tbody>
                     <tr>
-                <img src="img/field.png" style="max-height: 230px;" />
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Autonomous Start</td>
-                    <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="1" min="1" max="10" name="start"></td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Scored Yellow Tote</td>
-                    <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="3" name="yellowScored"></td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Manipulated Yellow Tote</td>
-                    <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="3" name="yellowPossess"></td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Stacked Level 1 Yellow Tote</td>
-                    <td class="col-md-2" scope="row">
-                        <div align="center" class="checkbox">
-                            <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack0" value="1">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Stacked Level 2 Yellow Tote</td>
-                    <td class="col-md-2" scope="row">
-                        <div align="center" class="checkbox">
-                            <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack1" value="1">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Stacked Level 3 Yellow Tote</td>
-                    <td class="col-md-2" scope="row">
-                        <div align="center" class="checkbox">
-                            <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack2" value="1">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Mobility</td>
-                    <td class="col-md-2" scope="row">
-                        <div align="center" class="checkbox">
-                            <input type="checkbox" class="checkbox-field" style="position: relative;" name="mobility" value="1">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Autonomous Recycling Containers Moved</td>
-                    <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="autoContainerMoved"></td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Step Recycling Containers Moved</td>
-                    <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="stepContainerMoved"></td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Manipulated Grey Totes</td>
-                    <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="greyToteMoved"></td>
-                </tr>
-                <tr>
-                    <td class="col-md-10" scope="row">Autonomous Comments</td>
-                    <td class="col-md-2" scope="row">
-                        <textarea class="form-control" rows="3" name="autoComments"></textarea>
-                    </td>
-                </tr>
+                        <td scope="row">
+                            Autonomous Diagram
+                        </td>
+                        <td scope="row">
+                            <img src="img/field.png" style="max-height: 230px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Autonomous Start</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="1" min="1" max="10" name="start"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Scored Yellow Tote</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="3" name="yellowScored"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Manipulated Yellow Tote</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="3" name="yellowPossess"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Stacked Level 1 Yellow Tote</td>
+                        <td class="col-md-2" scope="row">
+                            <div align="center" class="checkbox">
+                                <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack0" value="1">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Stacked Level 2 Yellow Tote</td>
+                        <td class="col-md-2" scope="row">
+                            <div align="center" class="checkbox">
+                                <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack1" value="1">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Stacked Level 3 Yellow Tote</td>
+                        <td class="col-md-2" scope="row">
+                            <div align="center" class="checkbox">
+                                <input type="checkbox" class="checkbox-field" style="position: relative;" name="yellowStack2" value="1">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Mobility</td>
+                        <td class="col-md-2" scope="row">
+                            <div align="center" class="checkbox">
+                                <input type="checkbox" class="checkbox-field" style="position: relative;" name="mobility" value="1">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Autonomous Recycling Containers Moved</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="autoContainerMoved"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Step Recycling Containers Moved</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="4" name="stepContainerMoved"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Manipulated Grey Totes</td>
+                        <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="0" min="0" max="20" name="greyToteMoved"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-10" scope="row">Autonomous Comments</td>
+                        <td class="col-md-2" scope="row">
+                            <textarea class="form-control" rows="3" name="autoComments"></textarea>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
