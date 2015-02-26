@@ -58,7 +58,7 @@ include('header.php');
                         echo("<a href=\"view_team.php?id=" . $_GET['id'] . "&team=" . $team['teamNumber'] . "\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>View</a>");
                         $prescout_query = mysql_query("SELECT * FROM " . $prescout_name . " WHERE teamNumber=" . $team['teamNumber']);
                         if (mysql_num_rows($prescout_query) > 0) {
-                            echo("<a href=\"pre_scout.php?id=" . $_GET['id'] . "&team=" . $team['teamNumber'] . "\" class=\"btn\">Prescout</a>");
+                            echo("<a href=\"pre_scout.php?id=" . $_GET['id'] . "&team=" . $team['teamNumber'] . "\" class=\"btn btn-success\">Prescout</a>");
                         } else {
                             echo("<a href=\"pre_scout.php?id=" . $_GET['id'] . "&team=" . $team['teamNumber'] . "\" class=\"btn btn-danger\">Prescout</a>");
                         }
