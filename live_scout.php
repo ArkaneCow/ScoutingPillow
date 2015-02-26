@@ -116,7 +116,9 @@ if (!isset($_GET['id'])) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="col-md-10" scope="row">Autonomous Start</td>
+                        <td class="col-md-10" scope="row">Autonomous Start
+                        <img src="img/field.png" style="max-height: 350px;" />
+                        </td>
                         <td class="col-md-2" scope="row"><input type="number" class="form-control number-field" value="1" min="1" max="10" name="start"></td>
                     </tr>
                     <tr>
