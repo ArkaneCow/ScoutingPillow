@@ -74,7 +74,7 @@ include('header.php');
     if ($_SESSION['rank'] < 2) {
         ?>
         <?php
-        echo("<form action=\"add_match.php?id=" . $_GET['id'] . "\" method=\"post\">");
+        echo("<form action=\"add_team.php?id=" . $_GET['id'] . "\" method=\"post\">");
         ?>
         <div class="panel panel-default">
             <div class="panel-heading">
