@@ -13,6 +13,7 @@ if (mysql_num_rows($field_query) != 1) {
     header('Location: live_scout.php');
 }
 $record = mysql_fetch_array($field_query);
+$enteredBy = mysql_real_escape_string(preg_replace("/[^A-Za-z0-9-\?\!\$\#\@\(\)\"\'\.\:\;\\@\,\_ \=\/\<\> ]/",'',$_POST['enteredBy']));
 $teamNumber = mysql_real_escape_string(preg_replace("/[^A-Za-z0-9-\?\!\$\#\@\(\)\"\'\.\:\;\\@\,\_ \=\/\<\> ]/",'',$_POST['teamNumber']));
 $talkedTo = mysql_real_escape_string(preg_replace("/[^A-Za-z0-9-\?\!\$\#\@\(\)\"\'\.\:\;\\@\,\_ \=\/\<\> ]/",'',$_POST['talkedTo']));
 $goals = mysql_real_escape_string(preg_replace("/[^A-Za-z0-9-\?\!\$\#\@\(\)\"\'\.\:\;\\@\,\_ \=\/\<\> ]/",'',$_POST['goals']));
@@ -58,7 +59,7 @@ if ($_FILES['media']['name']) {
 $additionalComments = mysql_real_escape_string(preg_replace("/[^A-Za-z0-9-\?\!\$\#\@\(\)\"\'\.\:\;\\@\,\_ \=\/\<\> ]/",'',$_POST['additionalComments']));
 $prescout_name = $record['prefixName'] . "_prescout";
 $pictures = $upload_file; 
-$db_query = "INSERT INTO " . $prescout_name . "(teamNumber, talkedTo, goals, manipulator, wheels, auto, autoStrategy, autoMobility, autoPushTotes, autoStackTotes, autoPushContainers, coop, teleStrategy, teleStackTotes, teleScoringPlatform, telePushContainer, teleNoodleContainer, pictures, additionalComments) VALUES('" . $teamNumber . "','" . $talkedTo . "','" . $goals . "','" . $manipulator . "','" . $wheels . "','" . $auto . "','" . $autoStrategy . "','" . $autoMobility . "','" . $autoPushTotes . "','" . $autoStackTotes . "','" . $autoPushContainers . "','" . $coop . "','" . $teleStrategy . "','" . $teleStackTotes . "','" . $teleScoringPlatform . "','" . $telePushContainer . "','" . $teleNoodleContainer . "','" . $pictures . "','" . $additionalComments . "')";
+$db_query = "INSERT INTO " . $prescout_name . "(enteredBy, teamNumber, talkedTo, goals, manipulator, wheels, auto, autoStrategy, autoMobility, autoPushTotes, autoStackTotes, autoPushContainers, coop, teleStrategy, teleStackTotes, teleScoringPlatform, telePushContainer, teleNoodleContainer, pictures, additionalComments) VALUES('" . $enteredBy . "','" . $teamNumber . "','" . $talkedTo . "','" . $goals . "','" . $manipulator . "','" . $wheels . "','" . $auto . "','" . $autoStrategy . "','" . $autoMobility . "','" . $autoPushTotes . "','" . $autoStackTotes . "','" . $autoPushContainers . "','" . $coop . "','" . $teleStrategy . "','" . $teleStackTotes . "','" . $teleScoringPlatform . "','" . $telePushContainer . "','" . $teleNoodleContainer . "','" . $pictures . "','" . $additionalComments . "')";
 if (!mysql_query($db_query)) {
     die(mysql_error());
 }

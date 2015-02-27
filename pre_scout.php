@@ -42,6 +42,7 @@ include('header.php');
     </div>
     <?php
     echo("<form action=\"pre_submit.php?id=" . $_GET['id'] . "\" method=\"post\" enctype=\"multipart/form-data\" id=\"formofdeath\">");
+    echo("<input type=\"hidden\" name=\"enteredBy\" value=\"" . $_SESSION['id'] . "\">");
     ?>
     <div class="panel panel-default">
         <div class="panel-heading">
