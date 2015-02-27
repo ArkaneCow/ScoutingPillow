@@ -29,61 +29,6 @@ include('header.php');
             ?>
         </h4>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h2 class="panel-title">Match List</h2>
-        </div>
-        <div class="panel-body">
-            <table class="container">
-                <thead>
-                    <tr>
-                        <th>Match #</th>
-                        <th>Blue 1</th>
-                        <th>Blue 2</th>
-                        <th>Blue 3</th>
-                        <th>Red 1</th>
-                        <th>Red 2</th>
-                        <th>Red 3</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $db_query = mysql_query("SELECT * FROM " . $match_name);
-                    $last_match = 0;
-                    while ($match = mysql_fetch_array($db_query)) {
-                        echo("<tr>");
-                        echo("<td scope=\"row\">");
-                        echo $match['id'];
-                        if ($match['id'] > $last_match) {
-                            $last_match = $match['id'];
-                        }
-                        echo("</td>");
-                        echo("<td scope=\"row\">");
-                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['blue1'] . "&match=" . $match['id'] . "&bot=4\" class=\"btn btn-primary\" style=\"min-width: 70px;\">" . $match['blue1'] . "</a>");
-                        echo("</td>");
-                        echo("<td scope=\"row\">");
-                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['blue2'] . "&match=" . $match['id'] . "&bot=5\" class=\"btn btn-primary\" style=\"min-width: 70px;\">" . $match['blue2'] . "</a>");
-                        echo("</td>");
-                        echo("<td scope=\"row\">");
-                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['blue3'] . "&match=" . $match['id'] . "&bot=6\" class=\"btn btn-primary\" style=\"min-width: 70px;\">" . $match['blue3'] . "</a>");
-                        echo("</td>");
-                        echo("<td scope=\"row\">");
-                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red1'] . "&match=" . $match['id'] . "&bot=1\" class=\"btn btn-danger\" style=\"min-width: 70px;\">" . $match['red1'] . "</a>");
-                        echo("</td>");
-                        echo("<td scope=\"row\">");
-                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red2'] . "&match=" . $match['id'] . "&bot=2\" class=\"btn btn-danger\" style=\"min-width: 70px;\">" . $match['red2'] . "</a>");
-                        echo("</td>");
-                        echo("<td scope=\"row\">");
-                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red3'] . "&match=" . $match['id'] . "&bot=3\" class=\"btn btn-danger\" style=\"min-width: 70px;\">" . $match['red3'] . "</a>");
-                        echo("</td>");
-                        echo("</tr>");
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
     <?php
     if ($_SESSION['rank'] < 2) {
         ?>
@@ -145,6 +90,61 @@ include('header.php');
         <?php
     } // end add match block
     ?>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Match List</h2>
+        </div>
+        <div class="panel-body">
+            <table class="container">
+                <thead>
+                    <tr>
+                        <th>Match #</th>
+                        <th>Blue 1</th>
+                        <th>Blue 2</th>
+                        <th>Blue 3</th>
+                        <th>Red 1</th>
+                        <th>Red 2</th>
+                        <th>Red 3</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $db_query = mysql_query("SELECT * FROM " . $match_name);
+                    $last_match = 0;
+                    while ($match = mysql_fetch_array($db_query)) {
+                        echo("<tr>");
+                        echo("<td scope=\"row\">");
+                        echo $match['id'];
+                        if ($match['id'] > $last_match) {
+                            $last_match = $match['id'];
+                        }
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['blue1'] . "&match=" . $match['id'] . "&bot=4\" class=\"btn btn-primary\" style=\"min-width: 70px;\">" . $match['blue1'] . "</a>");
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['blue2'] . "&match=" . $match['id'] . "&bot=5\" class=\"btn btn-primary\" style=\"min-width: 70px;\">" . $match['blue2'] . "</a>");
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['blue3'] . "&match=" . $match['id'] . "&bot=6\" class=\"btn btn-primary\" style=\"min-width: 70px;\">" . $match['blue3'] . "</a>");
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red1'] . "&match=" . $match['id'] . "&bot=1\" class=\"btn btn-danger\" style=\"min-width: 70px;\">" . $match['red1'] . "</a>");
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red2'] . "&match=" . $match['id'] . "&bot=2\" class=\"btn btn-danger\" style=\"min-width: 70px;\">" . $match['red2'] . "</a>");
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red3'] . "&match=" . $match['id'] . "&bot=3\" class=\"btn btn-danger\" style=\"min-width: 70px;\">" . $match['red3'] . "</a>");
+                        echo("</td>");
+                        echo("</tr>");
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <?php
 include('footer.php');
