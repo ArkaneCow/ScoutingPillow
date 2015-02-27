@@ -31,7 +31,7 @@ if (isset($new_event)) {
         die(mysql_error());
     }
     $prescout_name = $new_prefix . "_prescout";
-    $db_query = "CREATE TABLE " . $prescout_name . "(id int(11) NOT NULL AUTO_INCREMENT, teamNumber int(4) NOT NULL, talkedTo varchar(100) NOT NULL, goals text NOT NULL, manipulator varchar(100) NOT NULL, wheels varchar(100) NOT NULL, auto tinyint(1) NOT NULL, autoStrategy text, autoMobility tinyint(1), autoPushTotes tinyint(1), autoStackTotes tinyint(1), autoPushContainers tinyint(1), coop tinyint(1) NOT NULL, teleStrategy text, teleStackTotes tinyint(1) NOT NULL, teleScoringPlatform tinyint(1) NOT NULL, telePushContainer tinyint(1) NOT NULL, teleNoodleContainer tinyint(1) NOT NULL, pictures varchar(100), additionalComments text, PRIMARY KEY(id))";
+    $db_query = "CREATE TABLE " . $prescout_name . "(id int(11) NOT NULL AUTO_INCREMENT, enteredBy int(11) NOT NULL, teamNumber int(4) NOT NULL, talkedTo varchar(100) NOT NULL, goals text NOT NULL, manipulator varchar(100) NOT NULL, wheels varchar(100) NOT NULL, auto tinyint(1) NOT NULL, autoStrategy text, autoMobility tinyint(1), autoPushTotes tinyint(1), autoStackTotes tinyint(1), autoPushContainers tinyint(1), coop tinyint(1) NOT NULL, teleStrategy text, teleStackTotes tinyint(1) NOT NULL, teleScoringPlatform tinyint(1) NOT NULL, telePushContainer tinyint(1) NOT NULL, teleNoodleContainer tinyint(1) NOT NULL, programmingLanguage varchar(20) NOT NULL, humanStation varchar(20) NOT NULL, pictures varchar(100), additionalComments text, PRIMARY KEY(id))";
     if (!mysql_query($db_query)) {
         die(mysql_error());
     }
