@@ -79,7 +79,7 @@ include('header.php');
                                 } else if (strcmp($key, "enteredBy") == 0 ) {
                                     $user_query = mysql_query("SELECT * FROM users WHERE id=" . $datum[$key]);
                                     $user_record = mysql_fetch_array($user_query);
-                                    $value = "<a href=\"view_user.php?id=" . $datum[$key] . "\">" . $user_record['email'] . "</a>";
+                                    $value = "<a href=\"view_user.php?id=" . $datum[$key] . "\" class=\"btn\">" . $user_record['email'] . "</a>";
                                 } else {
                                     $value = $datum[$key];
                                 }
