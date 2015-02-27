@@ -1,4 +1,4 @@
-<?php
+ww<?php
 session_start();
 include('config.php');
 ?>
@@ -78,7 +78,7 @@ include('header.php');
         ?>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2 class="panel-title">Add Match</h2>
+                <h2 class="panel-title">Add Team</h2>
             </div>
             <div class="panel-body">
                 <table class="table">
