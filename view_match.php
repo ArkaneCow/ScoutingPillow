@@ -104,7 +104,10 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $datum = mysql_fetch_array($data_query);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        if (!$columns_query) {
+                            die(mysql_error());
+                        } $datum = mysql_fetch_array($data_query);
                         while ($row = mysql_fetch_assoc($columns_query)) {
                             echo("<tr>");
                             $key = $row['Field'];
@@ -138,7 +141,10 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $datum = mysql_fetch_array($data_query);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        if (!$columns_query) {
+                            die(mysql_error());
+                        } $datum = mysql_fetch_array($data_query);
                         while ($row = mysql_fetch_assoc($columns_query)) {
                             echo("<tr>");
                             $key = $row['Field'];
@@ -172,7 +178,10 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $datum = mysql_fetch_array($data_query);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        if (!$columns_query) {
+                            die(mysql_error());
+                        } $datum = mysql_fetch_array($data_query);
                         while ($row = mysql_fetch_assoc($columns_query)) {
                             echo("<tr>");
                             $key = $row['Field'];
@@ -189,7 +198,7 @@ include('header.php');
     </div>
     <div class="panel panel-default" id="red1">
         <div class="panel-heading">
-            <h2 class="panel-title">red 1</h2>
+            <h2 class="panel-title">Red 1</h2>
         </div>
         <div class="panel-body">
             <table class="container">
@@ -206,7 +215,10 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $datum = mysql_fetch_array($data_query);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        if (!$columns_query) {
+                            die(mysql_error());
+                        } $datum = mysql_fetch_array($data_query);
                         while ($row = mysql_fetch_assoc($columns_query)) {
                             echo("<tr>");
                             $key = $row['Field'];
@@ -223,7 +235,7 @@ include('header.php');
     </div>
     <div class="panel panel-default" id="red2">
         <div class="panel-heading">
-            <h2 class="panel-title">red 2</h2>
+            <h2 class="panel-title">Red 2</h2>
         </div>
         <div class="panel-body">
             <table class="container">
@@ -240,7 +252,10 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $datum = mysql_fetch_array($data_query);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        if (!$columns_query) {
+                            die(mysql_error());
+                        } $datum = mysql_fetch_array($data_query);
                         while ($row = mysql_fetch_assoc($columns_query)) {
                             echo("<tr>");
                             $key = $row['Field'];
@@ -257,7 +272,7 @@ include('header.php');
     </div>
     <div class="panel panel-default" id="red3">
         <div class="panel-heading">
-            <h2 class="panel-title">red 3</h2>
+            <h2 class="panel-title">Red 3</h2>
         </div>
         <div class="panel-body">
             <table class="container">
@@ -274,7 +289,10 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $datum = mysql_fetch_array($data_query);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        if (!$columns_query) {
+                            die(mysql_error());
+                        } $datum = mysql_fetch_array($data_query);
                         while ($row = mysql_fetch_assoc($columns_query)) {
                             echo("<tr>");
                             $key = $row['Field'];
