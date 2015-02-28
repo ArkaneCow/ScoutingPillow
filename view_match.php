@@ -104,7 +104,7 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $data_name);
                         if (!$columns_query) {
                             die(mysql_error());
                         } $datum = mysql_fetch_array($data_query);
@@ -141,7 +141,7 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $data_name);
                         if (!$columns_query) {
                             die(mysql_error());
                         } $datum = mysql_fetch_array($data_query);
@@ -178,7 +178,7 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $data_name);
                         if (!$columns_query) {
                             die(mysql_error());
                         } $datum = mysql_fetch_array($data_query);
@@ -215,7 +215,7 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $data_name);
                         if (!$columns_query) {
                             die(mysql_error());
                         } $datum = mysql_fetch_array($data_query);
@@ -252,7 +252,7 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $data_name);
                         if (!$columns_query) {
                             die(mysql_error());
                         } $datum = mysql_fetch_array($data_query);
@@ -289,7 +289,7 @@ include('header.php');
                         die(mysql_error());
                     }
                     if (mysql_num_rows($data_query)) {
-                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $data_name);
                         if (!$columns_query) {
                             die(mysql_error());
                         } $datum = mysql_fetch_array($data_query);
