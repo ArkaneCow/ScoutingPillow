@@ -76,10 +76,6 @@ include('header.php');
                                 echo("<td scope=\"row\">" . $row['Field'] . "</td>");
                                 if (strcmp($key, "pictures") == 0 && isset($datum[$key]) && $datum[$key] != '0') {
                                     $value = "<a href=\"" . $datum[$key] . "\"><img src=\"" . $datum[$key] . "\" style=\"max-height: 350px;\" /></a>";
-                                } else if (strcmp($key, "enteredBy") == 0 ) {
-                                    $user_query = mysql_query("SELECT * FROM users WHERE id=" . $datum[$key]);
-                                    $user_record = mysql_fetch_array($user_query);
-                                    $value = "<a href=\"view_user.php?id=" . $datum[$key] . "\" class=\"btn\">" . $user_record['email'] . "</a>";
                                 } else {
                                     $value = $datum[$key];
                                 }
