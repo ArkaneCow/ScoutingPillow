@@ -105,7 +105,11 @@ include('header.php');
                         <th>Red 1</th>
                         <th>Red 2</th>
                         <th>Red 3</th>
-
+                        <?php
+                        if ($_SESSION['rank'] < 2) {
+                            echo("<th>Action</th>");
+                        }
+                        ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -138,6 +142,11 @@ include('header.php');
                         echo("<td scope=\"row\">");
                         echo("<a href=\"live_scout.php?id=" . $_GET['id'] . "&team=" . $match['red3'] . "&match=" . $match['id'] . "&bot=3\" class=\"btn btn-danger\" style=\"min-width: 70px;\">" . $match['red3'] . "</a>");
                         echo("</td>");
+                        if ($_SESSION['rank'] < 2) {
+                            echo("<td scope=\"row\">");
+                            echo("<a href=\"delete_match.php?id=" . $_GET['id'] . "&match=" . $match['id'] . "\" style=\"min-width: 70px;\" class=\"btn\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>Delete</a>");
+                            echo("</td>");
+                        }
                         echo("</tr>");
                     }
                     ?>
