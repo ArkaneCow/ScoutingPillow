@@ -42,12 +42,12 @@ include('header.php');
                 <thead>
                     <tr>
                         <th>Match #</th>
-                        <th><a href="#blue1">Blue 1</a></th>
-                        <th><a href="#blue2">Blue 2</a></th>
-                        <th><a href="#blue3">Blue 3</a></th>
-                        <th><a href="#red1">Red 1</a></th>
-                        <th><a href="#red2">Red 2</a></th>
-                        <th><a href="#red3">Red 3</a></th>
+                        <th><a href="#blue1" style="color: black;" >Blue 1</a></th>
+                        <th><a href="#blue2" style="color: black;" >Blue 2</a></th>
+                        <th><a href="#blue3" style="color: black;" >Blue 3</a></th>
+                        <th><a href="#red1" style="color: black;" >Red 1</a></th>
+                        <th><a href="#red2" style="color: black;" >Red 2</a></th>
+                        <th><a href="#red3" style="color: black;" >Red 3</a></th>
                     </tr>
                 </thead>
                 <tbody>
