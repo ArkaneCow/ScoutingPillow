@@ -20,9 +20,8 @@ if (mysql_num_rows($field_query) != 1) {
 }
 $record = mysql_fetch_array($field_query);
 $teams_name = $record['prefixName'] . "_teams";
-$teams_query = "INSERT INTO " . $teams_name . "(teamNumber, teamName) VALUES(" . $_POST['teamNumber'] . "," . $_POST['teamName'] . ")";
+$teams_query = "INSERT INTO " . $teams_name . "(teamNumber, teamName) VALUES(" . $_POST['teamNumber'] . ",'" . $_POST['teamName'] . "')";
 if (!mysql_query($teams_query)) {
-    die($teams_query);
     die(mysql_error());
 }
 header('Location: team_list.php?id=' . $_GET['id']);
