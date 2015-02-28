@@ -29,67 +29,6 @@ include('header.php');
             ?>
         </h4>
     </div>
-    <?php
-    if ($_SESSION['rank'] < 2) {
-        ?>
-        <?php
-        echo("<form action=\"add_match.php?id=" . $_GET['id'] . "\" method=\"post\">");
-        ?>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2 class="panel-title">Add Match</h2>
-            </div>
-            <div class="panel-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Match #</th>
-                            <th>Blue 1</th>
-                            <th>Blue 2</th>
-                            <th>Blue 3</th>
-                            <th>Red 1</th>
-                            <th>Red 2</th>
-                            <th>Red 3</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" value="<?php echo($last_match + 1); ?>" class="form-control number-field" name="match" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue1" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue2" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue3" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="red1" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="red2" />
-                            </td>
-                            <td scope="row">
-                                <input type="number" min="1" max="9999" class="form-control number-field" name="red3" />
-                            </td>
-                            <td>
-                                <input type="submit" value="Add" class="btn btn-primary" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    <?php
-        echo("</form>");
-    ?>
-        <?php
-    } // end add match block
-    ?>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title">Match List</h2>
@@ -154,6 +93,67 @@ include('header.php');
             </table>
         </div>
     </div>
+    <?php
+    if ($_SESSION['rank'] < 2) {
+        ?>
+        <?php
+        echo("<form action=\"add_match.php?id=" . $_GET['id'] . "\" method=\"post\">");
+        ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Add Match</h2>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Match #</th>
+                            <th>Blue 1</th>
+                            <th>Blue 2</th>
+                            <th>Blue 3</th>
+                            <th>Red 1</th>
+                            <th>Red 2</th>
+                            <th>Red 3</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">
+                                <input type="number" min="1" max="9999" value="<?php echo($last_match + 1); ?>" class="form-control number-field" name="match" />
+                            </td>
+                            <td scope="row">
+                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue1" />
+                            </td>
+                            <td scope="row">
+                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue2" />
+                            </td>
+                            <td scope="row">
+                                <input type="number" min="1" max="9999" class="form-control number-field" name="blue3" />
+                            </td>
+                            <td scope="row">
+                                <input type="number" min="1" max="9999" class="form-control number-field" name="red1" />
+                            </td>
+                            <td scope="row">
+                                <input type="number" min="1" max="9999" class="form-control number-field" name="red2" />
+                            </td>
+                            <td scope="row">
+                                <input type="number" min="1" max="9999" class="form-control number-field" name="red3" />
+                            </td>
+                            <td>
+                                <input type="submit" value="Add" class="btn btn-primary" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <?php
+        echo("</form>");
+    ?>
+        <?php
+    } // end add match block
+    ?>
 </div>
 <?php
 include('footer.php');
