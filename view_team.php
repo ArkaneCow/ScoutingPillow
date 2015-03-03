@@ -123,14 +123,14 @@ include('header.php');
                             echo("<td scope=\"row\">");
                             $csv_path = "/var/tmp/" . $_GET['team'] . $variable . ".csv";
                             $png_path = "media/" . $_GET['team'] . $variable . ".png";
+                            $clean_command = "rm /var/tmp/*csv";
+                            exec($clean_command);
                             $data_query = "(SELECT 'matchNumber','" . $variable . "') UNION (SELECT matchNumber," . $variable . " FROM " . $data_name . " WHERE teamNumber=" . $_GET['team'] . " INTO OUTFILE '" . $csv_path . "' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n')";
                             if (!mysql_query($data_query)) {
                                 echo($data_query);
                                 die(mysql_error());
                             }
                             $r_command = "Rscript /var/www/ScoutingPillow/r/crunch-column-rr.R " . $csv_path . " " . $png_path;
-                            $clean_command = "rm " . $csv_path;
-                            exec($clean_command);
                             exec($r_command);
                             echo("<img src=" . $png_path . " />");
                             echo("</td>");
