@@ -129,6 +129,8 @@ include('header.php');
                                 die(mysql_error());
                             }
                             $r_command = "Rscript /var/www/ScoutingPillow/r/crunch-column-rr.R " . $csv_path . " " . $png_path;
+                            $clean_command = "rm /var/tmp/*csv";
+                            exec($clean_command);
                             exec($r_command);
                             echo("<img src=" . $png_path . " />");
                             echo("</td>");
