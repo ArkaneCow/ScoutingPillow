@@ -1,7 +1,7 @@
 args <- commandArgs(trailingOnly = TRUE)
-data_input <- "test.csv"
-png_output <- "out.png"
-rm(args)
+data_input <- args[1]
+img_output <- args[2]
+png(img_output)
 data <- read.csv(data_input, header=TRUE)
 data_fields = data[,1]
 data_values = data[,2]
@@ -27,3 +27,6 @@ data_summary = summary(data_values)
 text(length(data_values), mean(data_values), mean(data_summary), cex=0.8)
 abline(h=mean(data_summary), col="green")
 box()
+
+dev.off()
+
