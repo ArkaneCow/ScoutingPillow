@@ -46,7 +46,6 @@ include('header.php');
         <div class="panel-body" style="overflow-x: auto;">
             <?php
             $table_name = $record['prefixName'] . "_prescout";
-
             $team_num = $_GET['team'];
             $data_query = mysql_query("SELECT * FROM " . $table_name . " WHERE teamNumber=" . $team_num);
             if (!$data_query) {
@@ -83,6 +82,64 @@ include('header.php');
             ?>
         </div>
     </div>
+    <?php
+    //TODO: move to new php file and use iframe + button to generate statistics request and sanitize every get/post
+    if ($_SESSION['rank'] < 2) {
+        ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Live Scouting Statistics</h2>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                    <th>Field</th>
+                    <th>Data</th>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $table_name = $record['prefixName'] . "_data";
+                        $team_num = $_GET['team'];
+                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                        if (!$columns_query) {
+                            die(mysql_error());
+                        }
+                        $ignore_columns = array("id", "enteredBy", "matchNumber", "teamNumber", "botNumber", "isDead", "isShow", "autoComments", "mobility", "teleComments");
+                        while ($variable = mysql_fetch_assoc($columns_query)) {
+                            $skip = false;
+                            foreach ($ignore_columns as $ignore_item) {
+                                if (strcmp($ignore_item, $variable) == 0) {
+                                    $skip = true;
+                                }
+                            }
+                            if ($skip) {
+                                continue;
+                            }
+                            echo("<tr>");
+                            echo("<td scope=\"row\">");
+                            echo($variable);
+                            echo("</td>");
+                            echo("<td scope=\"row\">");
+                            $csv_path = "/var/tmp/" . $_GET['team'] . $variable . ".csv";
+                            $png_path = "media/" . $_GET['team'] . $variable . ".png";
+                            $data_query = "(SELECT 'matchNumber','" . $variable . "') UNION (SELECT matchNumber," . $variable . " FROM " . $table_name . " WHERE teamNumber=" . $_GET['team'] . " INTO OUTFILE '" . $csv_path . "' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n')";
+                            if (!mysql_query($data_query)) {
+                                die(mysql_error());
+                            }
+                            $r_command = "Rscript r/crunch-column-rr.R " . $csv_path . " " . $png_path;
+                            exec($r_command);
+                            echo("<img src=" . $png_path . " />");
+                            echo("</td>");
+                            echo("</tr>");
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <?php
+    } //end live scouting statistics
+    ?>
 </div>
 <?php
 include('footer.php');
