@@ -84,13 +84,13 @@ include('header.php');
     </div>
     <?php
     //TODO: move to new php file and use iframe + button to generate statistics request and sanitize every get/post
-    if ($_SESSION['rank'] < 2) {
+    if ($_SESSION['rank'] < 3) {
         ?>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2 class="panel-title">Live Scouting Statistics</h2>
             </div>
-            <div class="panel-body">
+            <div class="panel-body" style="overflow-x: auto;">
                 <table class="table">
                     <thead>
                     <th>Field</th>
@@ -121,18 +121,9 @@ include('header.php');
                             echo($variable);
                             echo("</td>");
                             echo("<td scope=\"row\">");
-                            $csv_path = "/var/tmp/" . $_GET['team'] . $variable . time() . ".csv";
-                            $png_path = "media/" . $_GET['team'] . $variable . time() . ".png";
-                            $clean_command = "rm /var/tmp/*csv";
-                            exec($clean_command);
-                            $data_query = "(SELECT 'matchNumber','" . $variable . "') UNION (SELECT matchNumber," . $variable . " FROM " . $data_name . " WHERE teamNumber=" . $_GET['team'] . " INTO OUTFILE '" . $csv_path . "' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n')";
-                            if (!mysql_query($data_query)) {
-                                echo($data_query);
-                                die(mysql_error());
-                            }
-                            $r_command = "Rscript /var/www/ScoutingPillow/r/crunch-column-rr.R " . $csv_path . " " . $png_path;
-                            exec($r_command);
-                            echo("<img src=" . $png_path . " />");
+                            echo("<div id=stat" . $variable . ">");
+                            //button to load frame
+                            echo("</div>");
                             echo("</td>");
                             echo("</tr>");
                         }
