@@ -104,7 +104,7 @@ include('header.php');
                         if (!$data_columns_query) {
                             die(mysql_error());
                         }
-                        $ignore_columns = array("id", "enteredBy", "matchNumber", "teamNumber", "botNumber", "isDead", "isShow", "autoComments", "mobility", "teleComments");
+                        $ignore_columns = array("id", "enteredBy", "matchNumber", "teamNumber", "botNumber", "isDead", "isShow", "autoComments", "mobility", "teleComments", "start", "totePossess");
                         while ($var = mysql_fetch_assoc($data_columns_query)) {
                             $variable = $var['Field'];
                             $skip = false;
