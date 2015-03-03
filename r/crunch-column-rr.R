@@ -12,9 +12,9 @@ res_coeffs <- coefficients(res_lm)
 next_x = data.frame(data_index = length(data_values) + 1)
 next_x_val = length(data_values) + 1
 res_predict <- predict(res_lm, next_x, interval="predict")
-res <- res_predict[1]
-res_lwr <- res_predict[2]
-res_upr <- res_predict[3]
+res <- max(res_predict[1], 0)
+res_lwr <- max(0, res_predict[2])
+res_upr <- max(0, res_predict[3])
 data_res = c(res, res_lwr, res_upr)
 
 data_index <- append(data_index, c(next_x_val, next_x_val, next_x_val))
