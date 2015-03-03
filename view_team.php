@@ -125,7 +125,7 @@ include('header.php');
                             $png_path = "media/" . $_GET['team'] . $variable . ".png";
                             $data_query = "(SELECT 'matchNumber','" . $variable . "') UNION (SELECT matchNumber," . $variable . " FROM " . $data_name . " WHERE teamNumber=" . $_GET['team'] . " INTO OUTFILE '" . $csv_path . "' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n')";
                             if (!mysql_query($data_query)) {
-                                die($data_query);
+                                echo($data_query);
                                 die(mysql_error());
                             }
                             $r_command = "Rscript /var/www/ScoutingPillow/r/crunch-column-rr.R " . $csv_path . " " . $png_path;
