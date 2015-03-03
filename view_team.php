@@ -98,14 +98,14 @@ include('header.php');
                     </thead>
                     <tbody>
                         <?php
-                        $table_name = $record['prefixName'] . "_data";
+                        $data_name = $record['prefixName'] . "_data";
                         $team_num = $_GET['team'];
-                        $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
-                        if (!$columns_query) {
+                        $data_columns_query = mysql_query("SHOW COLUMNS FROM " . $data_name);
+                        if (!$data_columns_query) {
                             die(mysql_error());
                         }
                         $ignore_columns = array("id", "enteredBy", "matchNumber", "teamNumber", "botNumber", "isDead", "isShow", "autoComments", "mobility", "teleComments");
-                        while ($variable = mysql_fetch_assoc($columns_query)) {
+                        while ($variable = mysql_fetch_assoc($data_columns_query)) {
                             $skip = false;
                             foreach ($ignore_columns as $ignore_item) {
                                 if (strcmp($ignore_item, $variable) == 0) {
@@ -126,7 +126,7 @@ include('header.php');
                             if (!mysql_query($data_query)) {
                                 die(mysql_error());
                             }
-                            $r_command = "Rscript r/crunch-column-rr.R " . $csv_path . " " . $png_path;
+                            $r_command = "Rscript /var/www/ScoutingPillow/r/crunch-column-rr.R " . $csv_path . " " . $png_path;
                             exec($r_command);
                             echo("<img src=" . $png_path . " />");
                             echo("</td>");
