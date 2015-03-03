@@ -46,40 +46,39 @@ include('header.php');
         <div class="panel-body" style="overflow-x: auto;">
             <?php
             $table_name = $record['prefixName'] . "_prescout";
-            $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
-            if (!$columns_query) {
+
+            $team_num = $_GET['team'];
+            $data_query = mysql_query("SELECT * FROM " . $table_name . " WHERE teamNumber=" . $team_num);
+            if (!$data_query) {
                 die(mysql_error());
             }
-            if (mysql_num_rows($columns_query) > 0) {
-                $team_num = $_GET['team'];
-                $data_query = mysql_query("SELECT * FROM " . $table_name . " WHERE teamNumber=" . $team_num);
-                if (!$data_query) {
+            while ($datum = mysql_fetch_array($data_query)) {
+                echo("<table class=\"table\">");
+                echo("<thead>");
+                echo("<tr>");
+                echo("<th>Field</th>");
+                echo("<th>Value</th>");
+                echo("</tr>");
+                echo("</thead>");
+                echo("<tbody>");
+                $columns_query = mysql_query("SHOW COLUMNS FROM " . $table_name);
+                if (!$columns_query) {
                     die(mysql_error());
                 }
-                while ($datum = mysql_fetch_array($data_query)) {
-                    echo("<table class=\"table\">");
-                    echo("<thead>");
+                while ($row = mysql_fetch_assoc($columns_query)) {
                     echo("<tr>");
-                    echo("<th>Field</th>");
-                    echo("<th>Value</th>");
-                    echo("</tr>");
-                    echo("</thead>");
-                    echo("<tbody>");
-                    while ($row = mysql_fetch_assoc($columns_query)) {
-                        echo("<tr>");
-                        $key = $row['Field'];
-                        echo("<td scope=\"row\">" . $row['Field'] . "</td>");
-                        if (strcmp($key, "pictures") == 0 && isset($datum[$key]) && $datum[$key] != '0') {
-                            $value = "<a href=\"" . $datum[$key] . "\"><img src=\"" . $datum[$key] . "\" style=\"max-height: 350px;\" /></a>";
-                        } else {
-                            $value = $datum[$key];
-                        }
-                        echo("<td scope=\"row\">" . $value . "</td>");
-                        echo("</tr>");
+                    $key = $row['Field'];
+                    echo("<td scope=\"row\">" . $row['Field'] . "</td>");
+                    if (strcmp($key, "pictures") == 0 && isset($datum[$key]) && $datum[$key] != '0') {
+                        $value = "<a href=\"" . $datum[$key] . "\"><img src=\"" . $datum[$key] . "\" style=\"max-height: 350px;\" /></a>";
+                    } else {
+                        $value = $datum[$key];
                     }
-                    echo("</tbody>");
-                    echo("</table>");
+                    echo("<td scope=\"row\">" . $value . "</td>");
+                    echo("</tr>");
                 }
+                echo("</tbody>");
+                echo("</table>");
             }
             ?>
         </div>
