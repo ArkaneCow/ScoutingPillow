@@ -122,7 +122,15 @@ include('header.php');
                             echo("</td>");
                             echo("<td scope=\"row\">");
                             echo("<div id=stat" . $variable . ">");
-                            //button to load frame
+                            echo("<script type=\"text/javascript\">");
+                            echo("$(document.ready(function() {"
+                                    . "$('<button/>', {"
+                                    . "text: 'Generate'"
+                                    . "id: generate_" . $variable
+                                    . "click: function() { alert('hi'); }"
+                                    . "});"
+                                    . "});");
+                            echo("</script>");
                             echo("</div>");
                             echo("</td>");
                             echo("</tr>");
