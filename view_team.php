@@ -123,7 +123,7 @@ include('header.php');
                             echo("<td scope=\"row\">");
                             echo("<div id=stat_" . $variable . ">");
                             echo("<script type=\"text/javascript\">");
-                            echo("$(window).load(function() {"
+                            echo("$(document).ready(function() {"
                                     . "var gen_button = $('<button/>', {"
                                     . "text: 'Generate',"
                                     . "class: 'btn',"
