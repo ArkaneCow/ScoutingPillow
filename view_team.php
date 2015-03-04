@@ -125,8 +125,8 @@ include('header.php');
                             echo("<script type=\"text/javascript\">");
                             echo("$(document).ready(function() {"
                                     . "$('<button/>', {"
-                                    . "text: 'Generate'"
-                                    . "id: 'generate_" . $variable . "'"
+                                    . "text: 'Generate',"
+                                    . "id: 'generate_" . $variable . "',"
                                     . "click: function() { alert('hi'); }"
                                     . "});"
                                     . "});");
