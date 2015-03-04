@@ -10,12 +10,12 @@ if ($_SESSION['rank'] > 2) {
 }
 ?>
 <?php
-$event_name = mysql_real_escape_string(preg_replace($_GET['id']));
+$event_name = $_GET['id'];
 $event_query = mysql_query("SELECT * FROM events WHERE id=" . $event_name);
 $event = mysql_fetch_array($event_query);
 $data_name = $event['prefixName'] . "_data";
-$team_number = mysql_real_escape_string(preg_replace($_GET['team']));
-$field_name = mysql_real_escape_string(preg_replace($_GET['field']));
+$team_number = $_GET['team'];
+$field_name = $_GET['field'];
 $variable = $field_name;
 $csv_path = "/var/tmp/" . $_GET['team'] . $variable . time() . ".csv";
 $png_path = "media/" . $_GET['team'] . $variable . time() . ".png";
