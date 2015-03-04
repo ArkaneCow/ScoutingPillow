@@ -87,7 +87,7 @@ include('header.php');
     if ($_SESSION['rank'] < 3) {
         ?>
         <div class="panel panel-default">
-            <div class="panel panel-default">
+            <div class="panel-heading">
                 <h2 class="panel-title">
                     Summary Statistics
                 </h2>
