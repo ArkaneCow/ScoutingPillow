@@ -87,6 +87,31 @@ include('header.php');
     if ($_SESSION['rank'] < 3) {
         ?>
         <div class="panel panel-default">
+            <div class="panel panel-default">
+                <h2 class="panel-title">
+                    Summary Statistics
+                </h2>
+            </div>
+            <div class="panel-body" style="overflow-x: auto;">
+                <?php
+                $variable = "total_score";
+                echo("<div id=stat_" . $variable . ">");
+                echo("<script type=\"text/javascript\">");
+                echo("$(document).ready(function() {"
+                . "var gen_button = $('<button/>', {"
+                . "text: 'Generate',"
+                . "class: 'btn',"
+                . "id: 'generate_" . $variable . "',"
+                . "click: function() { $('#stat_" . $variable . "').load('crunch_score.php?id=" . $_GET['id'] . "&team=" . $team_num . '); }"
+                . "});"
+                . "$('#stat_" . $variable . "').append(gen_button);"
+                . "});");
+                echo("</script>");
+                echo("</div>");
+                ?>
+            </div>
+        </div>
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h2 class="panel-title">Live Scouting Statistics</h2>
             </div>
@@ -124,14 +149,14 @@ include('header.php');
                             echo("<div id=stat_" . $variable . ">");
                             echo("<script type=\"text/javascript\">");
                             echo("$(document).ready(function() {"
-                                    . "var gen_button = $('<button/>', {"
-                                    . "text: 'Generate',"
-                                    . "class: 'btn',"
-                                    . "id: 'generate_" . $variable . "',"
-                                    . "click: function() { $('#stat_" . $variable . "').load('crunch_column.php?id=" . $_GET['id'] . "&team=" . $team_num . "&field=" . $variable . "'); }"
-                                    . "});"
-                                    . "$('#stat_" . $variable . "').append(gen_button);"
-                                    . "});");
+                            . "var gen_button = $('<button/>', {"
+                            . "text: 'Generate',"
+                            . "class: 'btn',"
+                            . "id: 'generate_" . $variable . "',"
+                            . "click: function() { $('#stat_" . $variable . "').load('crunch_column.php?id=" . $_GET['id'] . "&team=" . $team_num . "&field=" . $variable . "'); }"
+                            . "});"
+                            . "$('#stat_" . $variable . "').append(gen_button);"
+                            . "});");
                             echo("</script>");
                             echo("</div>");
                             echo("</td>");
