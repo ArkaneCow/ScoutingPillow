@@ -18,7 +18,7 @@ $team_number = $_GET['team'];
 $field_name = $_GET['field'];
 $variable = $field_name;
 $csv_path = "/var/tmp/" . $_GET['team'] . $variable . time() . ".csv";
-$png_path = "media/" . $_GET['team'] . $variable . time() . ".png";
+$png_path = "media/" . $_GET['team'] . $variable . ".png";
 $clean_command = "rm /var/tmp/*csv";
 exec($clean_command);
 $data_query = "(SELECT 'matchNumber','" . $variable . "') UNION (SELECT matchNumber," . $variable . " FROM " . $data_name . " WHERE teamNumber=" . $_GET['team'] . " INTO OUTFILE '" . $csv_path . "' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n')";
