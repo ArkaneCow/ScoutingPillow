@@ -121,15 +121,17 @@ include('header.php');
                             echo($variable);
                             echo("</td>");
                             echo("<td scope=\"row\">");
-                            echo("<div id=stat" . $variable . ">");
+                            echo("<div id=stat_" . $variable . ">");
                             echo("<script type=\"text/javascript\">");
                             echo("$(window).load(function() {"
-                                    . "$('<button/>', {"
+                                    . "var gen_button = $('<button/>', {"
                                     . "text: 'Generate',"
+                                    . "class: 'btn',"
                                     . "id: 'generate_" . $variable . "',"
-                                    . "click: function() { alert('hi'); }"
+                                    . "click: function() { $('#stat_" . $variable . "').load(crunch_column.php?id=" . $_GET['id'] . "&team=" . $team_num . "&field=" . $variable . "); }"
                                     . "});"
-                                    . "});");
+                                    . "});\n"
+                                    . "$('#stat_" . $variable . "').append(gen_btn);");
                             echo("</script>");
                             echo("</div>");
                             echo("</td>");
