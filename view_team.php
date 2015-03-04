@@ -93,22 +93,35 @@ include('header.php');
                 </h2>
             </div>
             <div class="panel-body" style="overflow-x: auto;">
-                <?php
-                $variable = "total_score";
-                echo("<div id=stat_" . $variable . ">");
-                echo("<script type=\"text/javascript\">");
-                echo("$(document).ready(function() {"
-                . "var gen_button = $('<button/>', {"
-                . "text: 'Generate',"
-                . "class: 'btn',"
-                . "id: 'generate_" . $variable . "',"
-                . "click: function() { $('#stat_" . $variable . "').load('crunch_score.php?id=" . $_GET['id'] . "&team=" . $team_num . "'); }"
-                . "});"
-                . "$('#stat_" . $variable . "').append(gen_button);"
-                . "});");
-                echo("</script>");
-                echo("</div>");
-                ?>
+                <table class="table">
+                    <thead>
+                    <th>Field</th>
+                    <th>Data</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">Point Contribution</td>
+                            <td scope="row">
+                                <?php
+                                $variable = "total_score";
+                                echo("<div id=stat_" . $variable . ">");
+                                echo("<script type=\"text/javascript\">");
+                                echo("$(document).ready(function() {"
+                                . "var gen_button = $('<button/>', {"
+                                . "text: 'Generate',"
+                                . "class: 'btn',"
+                                . "id: 'generate_" . $variable . "',"
+                                . "click: function() { $('#stat_" . $variable . "').load('crunch_score.php?id=" . $_GET['id'] . "&team=" . $team_num . "'); }"
+                                . "});"
+                                . "$('#stat_" . $variable . "').append(gen_button);"
+                                . "});");
+                                echo("</script>");
+                                echo("</div>");
+                                ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="panel panel-default">
