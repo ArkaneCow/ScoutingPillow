@@ -128,7 +128,7 @@ include('header.php');
                                     . "text: 'Generate',"
                                     . "class: 'btn',"
                                     . "id: 'generate_" . $variable . "',"
-                                    . "click: function() { $('#stat_" . $variable . "').load(crunch_column.php?id=" . $_GET['id'] . "&team=" . $team_num . "&field=" . $variable . "); }"
+                                    . "click: function() { $('#stat_" . $variable . "').load('crunch_column.php?id=" . $_GET['id'] . "&team=" . $team_num . "&field=" . $variable . "'); }"
                                     . "});"
                                     . "});\n"
                                     . "$('#stat_" . $variable . "').append(gen_btn);");
