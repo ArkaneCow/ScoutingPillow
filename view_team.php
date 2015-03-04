@@ -130,7 +130,7 @@ include('header.php');
                                     . "id: 'generate_" . $variable . "',"
                                     . "click: function() { $('#stat_" . $variable . "').load('crunch_column.php?id=" . $_GET['id'] . "&team=" . $team_num . "&field=" . $variable . "'); }"
                                     . "});"
-                                    . "$('#stat_" . $variable . "').append(gen_btn);"
+                                    . "$('#stat_" . $variable . "').append(gen_button);"
                                     . "});");
                             echo("</script>");
                             echo("</div>");
