@@ -39,7 +39,7 @@ lines(data_extend, data_predict_lwr, type="l", lty=2, lwd=2, pch=22, col="red")
 lines(data_extend, data_predict_upr, type="l", lty=2, lwd=2, pch=22, col="red")
 text(length(data_values), mean(data_values), mean(data_values))
 abline(h=mean(data_values), col="green")
-text(floor(length(data_plot)/2), range(0, data_plot, data_res)[2], paste("y = ", res_co[1], " + ", res_co[2], "*x"))
+text(floor(length(data_plot)/2), range(0, data_plot, data_res)[2], paste("y = ", round(res_co[1], 3), " + ", round(res_co[2], 3), "*x"))
 box()
 
 dev.off()
