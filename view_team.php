@@ -83,7 +83,6 @@ include('header.php');
         </div>
     </div>
     <?php
-    //TODO: move to new php file and use iframe + button to generate statistics request and sanitize every get/post
     if ($_SESSION['rank'] < 3) {
         ?>
         <div class="panel panel-default">
@@ -100,7 +99,7 @@ include('header.php');
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row">Point Contribution</td>
+                            <td scope="row">Total Point Contribution</td>
                             <td scope="row">
                                 <?php
                                 $variable = "total_score";
@@ -112,6 +111,48 @@ include('header.php');
                                 . "class: 'btn',"
                                 . "id: 'generate_" . $variable . "',"
                                 . "click: function() { $('#stat_" . $variable . "').load('crunch_score.php?id=" . $_GET['id'] . "&team=" . $team_num . "'); }"
+                                . "});"
+                                . "$('#stat_" . $variable . "').append(gen_button);"
+                                . "});");
+                                echo("</script>");
+                                echo("</div>");
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Tote Points</td>
+                            <td scope="row">
+                                <?php
+                                $variable = "tote_score";
+                                echo("<div id=stat_" . $variable . ">");
+                                echo("<script type=\"text/javascript\">");
+                                echo("$(document).ready(function() {"
+                                . "var gen_button = $('<button/>', {"
+                                . "text: 'Generate',"
+                                . "class: 'btn',"
+                                . "id: 'generate_" . $variable . "',"
+                                . "click: function() { $('#stat_" . $variable . "').load('crunch_tote.php?id=" . $_GET['id'] . "&team=" . $team_num . "'); }"
+                                . "});"
+                                . "$('#stat_" . $variable . "').append(gen_button);"
+                                . "});");
+                                echo("</script>");
+                                echo("</div>");
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Container Points</td>
+                            <td scope="row">
+                                <?php
+                                $variable = "container_score";
+                                echo("<div id=stat_" . $variable . ">");
+                                echo("<script type=\"text/javascript\">");
+                                echo("$(document).ready(function() {"
+                                . "var gen_button = $('<button/>', {"
+                                . "text: 'Generate',"
+                                . "class: 'btn',"
+                                . "id: 'generate_" . $variable . "',"
+                                . "click: function() { $('#stat_" . $variable . "').load('crunch_container.php?id=" . $_GET['id'] . "&team=" . $team_num . "'); }"
                                 . "});"
                                 . "$('#stat_" . $variable . "').append(gen_button);"
                                 . "});");
