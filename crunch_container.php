@@ -20,7 +20,7 @@ $csv_path = "/var/tmp/" . $_GET['team'] . $variable . time() . ".csv";
 $png_path = "media/" . $_GET['team'] . $variable . ".png";
 $clean_command = "rm /var/tmp/*csv";
 exec($clean_command);
-$data_query = "(SELECT 'matchNumber','" . $variable . "') UNION (SELECT matchNumber, (container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4))" . $variable . " FROM " . $data_name . " WHERE teamNumber=" . $_GET['team'] . " INTO OUTFILE '" . $csv_path . "' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n')";
+$data_query = "(SELECT 'matchNumber','" . $variable . "') UNION (SELECT matchNumber, (container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)" . $variable . " FROM " . $data_name . " WHERE teamNumber=" . $_GET['team'] . " INTO OUTFILE '" . $csv_path . "' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n')";
 if (!mysql_query($data_query)) {
     echo($data_query);
     die(mysql_error());
