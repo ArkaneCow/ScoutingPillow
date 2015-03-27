@@ -113,7 +113,7 @@ include('header.php');
                             <?php
                             $bluepredict2_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue2']);
                             $bluepredict2_record = mysql_fetch_array($bluepredict2_query);
-                            $bluepredict2_score = intval($bluepredict1_record['score']);
+                            $bluepredict2_score = intval($bluepredict2_record['score']);
                             echo($bluepredict2_score);
                             ?>
                         </td>
@@ -202,7 +202,7 @@ include('header.php');
                             <?php
                             $blue2_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue2'] . " AND matchNumber=" . $_GET['match']);
                             $blue2_record = mysql_fetch_array($blue2_query);
-                            $blue2_score = intval($blue1_record['score']);
+                            $blue2_score = intval($blue2_record['score']);
                             echo($blue2_score);
                             ?>
                         </td>
