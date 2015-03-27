@@ -73,6 +73,14 @@ include('header.php');
                             ?>
                         </td>
                     </tr>
+                    <tr>
+                        <td scope="row">Data</td>
+                        <td scope="row">
+                            <?php
+                            echo("<a href=\"rank_list.php?id=" . $record['id'] . "\" class=\"btn\">Team Rankings</a>");
+                            ?>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div> 

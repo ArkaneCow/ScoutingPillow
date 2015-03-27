@@ -38,6 +38,7 @@ include('header.php');
                         echo("<a href=\"team_list.php?id=" . $record['id'] . "\" class=\"btn\">Team List</a>");
                         echo("<a href=\"match_list.php?id=" . $record['id'] . "\" class=\"btn\">Match List</a>");
                         echo("<a href=\"view_data.php?id=" . $record['id'] . "\" class=\"btn btn-primary\">Raw Data</a>");
+                        echo("<a href=\"rank_list.php?id=" . $record['id'] . "\" class=\"btn btn-primary\">Rankings</a>");
                         echo("</td>");
                         echo("</tr>");
                     }
