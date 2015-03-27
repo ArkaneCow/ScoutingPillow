@@ -40,7 +40,7 @@ include('header.php');
                 <thead>
                     <tr>
                         <th>Team #</th>
-                        <th>Average Point Contribution</th>
+                        <th>Contribution</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
