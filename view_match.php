@@ -150,17 +150,25 @@ include('header.php');
                             ?>
                         </td>
                     </tr>
+                </tbody>
+            </table>
+            <table class="container">
+                <thead>
+                <th>Blue Predict Total</th>
+                <th>Red Predict Total</th>
+                </thead>
+                <tbody>
                     <tr>
-                    <td scope="row">
-                    <?php
-                    echo($bluepredict1_score + $bluepredict2_score + $bluepredict3_score);
-                    ?>
-                    </td>
-                    <td scope="row">
-                    <?php
-                    echo($redpredict1_score + $redpredict2_score + $redpredict3_score);
-                    ?>
-                    </td>
+                        <td scope="row">
+                            <?php
+                            echo($bluepredict1_score + $bluepredict2_score + $bluepredict3_score);
+                            ?>
+                        </td>
+                        <td scope="row">
+                            <?php
+                            echo($redpredict1_score + $redpredict2_score + $redpredict3_score);
+                            ?>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -228,6 +236,26 @@ include('header.php');
                             $red3_record = mysql_fetch_array($red1_query);
                             $red3_score = intval($red3_record['score']);
                             echo($red3_score);
+                            ?>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="container">
+                <thead>
+                <th>Blue Total</th>
+                <th>Red Total</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">
+                            <?php
+                            echo($blue_score + $blue2_score + $blue3_score);
+                            ?>
+                        </td>
+                        <td scope="row">
+                            <?php
+                            echo($red1_score + $red2_score + $red3_score);
                             ?>
                         </td>
                     </tr>
