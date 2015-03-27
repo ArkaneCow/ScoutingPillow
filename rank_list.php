@@ -72,7 +72,7 @@ include('header.php');
                         echo("<a href=\"view_team.php?id=" . $_GET['id'] . "&team=" . $team['teamNumber'] . "\" class=\"btn\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>View</a>");
                         echo("</td>");
                         echo("</tr>");
-                        $rank_number++;
+                        $rank_count++;
                     }
                     ?>
                 </tbody>
