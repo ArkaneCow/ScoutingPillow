@@ -100,18 +100,19 @@ include('header.php');
                         <th>Red 1</th>
                         <th>Red 2</th>
                         <th>Red 3</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $match_query = mysql_query("SELECT * FROM " . $match_name . " WHERE red1=" . $team_num . " OR red2=" . $team_num . " OR red3=" . $team_num . " OR blue1=" . $team_num . " OR blue2=" . $team_num . " OR blue3=" . $team_num);
+                    $match_query = mysql_query("SELECT * FROM " . $match_table . " WHERE red1=" . $team_num . " OR red2=" . $team_num . " OR red3=" . $team_num . " OR blue1=" . $team_num . " OR blue2=" . $team_num . " OR blue3=" . $team_num);
                     if (!$match_query) {
                         die(mysql_error());
                     }
                     while ($match_record = mysql_fetch_array($match_query)) {
                         echo("<tr>");
                         echo("td scope=\"row\">");
-                        echo("<a href=\"view_match.php?id=" . $event_id . "&match=" . $match_record['id'] . "\">" . $match_record['id'] . "</a>");
+                        echo($match_record['id']);
                         echo("</td>");
                         echo("td scope=\"row\">");
                         echo("<a href=\"view_team.php?id=" . $event_id . "&team=" . $match_record['blue1'] . "\" class=\"btn btn-primary\">" . $match_record['blue1'] . "</a>");
@@ -130,6 +131,9 @@ include('header.php');
                         echo("</td>");
                         echo("td scope=\"row\">");
                         echo("<a href=\"view_team.php?id=" . $event_id . "&team=" . $match_record['red3'] . "\" class=\"btn btn-danger\">" . $match_record['red3'] . "</a>");
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo("<a href=\"view_match.php?id=" . $event_id . "&match=" . $match_record['id'] . "\" class=\"btn\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>View</a>");
                         echo("</td>");
                         echo("</tr>");
                     }
