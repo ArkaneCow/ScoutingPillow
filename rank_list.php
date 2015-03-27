@@ -40,13 +40,15 @@ include('header.php');
                 <thead>
                     <tr>
                         <th>Team #</th>
-                        <th>Contribution</th>
+                        <th>Avg Pts</th>
+                        <th>Min Pts</th>
+                        <th>Max Pts</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $db_query = mysql_query("SELECT teamNumber, AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) AS avgScore FROM " . $data_name . " GROUP BY teamNumber ORDER BY avgScore DESC");
+                    $db_query = mysql_query("SELECT teamNumber, AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) AS avgScore, MIN((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) minScore, MAX((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) maxScore FROM " . $data_name . " GROUP BY teamNumber ORDER BY avgScore DESC");
                     while ($team = mysql_fetch_array($db_query)) {
                         echo("<tr>");
                         echo("<td scope=\"row\">");
@@ -54,6 +56,12 @@ include('header.php');
                         echo("</td>");
                         echo("<td scope=\"row\">");
                         echo($team['avgScore']);
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo($team['minScore']);
+                        echo("</td>");
+                        echo("<td scope=\"row\">");
+                        echo($team['maxScore']);
                         echo("</td>");
                         echo("<td scope=\"row\">");
                         echo("<a href=\"view_team.php?id=" . $_GET['id'] . "&team=" . $team['teamNumber'] . "\" class=\"btn\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>View</a>");
