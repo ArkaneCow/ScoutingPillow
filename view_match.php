@@ -250,7 +250,7 @@ include('header.php');
                     <tr>
                         <td scope="row">
                             <?php
-                            echo($blue_score + $blue2_score + $blue3_score);
+                            echo($blue1_score + $blue2_score + $blue3_score);
                             ?>
                         </td>
                         <td scope="row">
