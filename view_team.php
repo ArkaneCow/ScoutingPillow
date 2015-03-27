@@ -25,6 +25,7 @@ include('header.php');
     <div class="page-header">
         <?php
         $team_table = $record['prefixName'] . "_teams";
+        $match_table = $record['prefixName'] . "_matches";
         $team_query = mysql_query("SELECT * FROM " . $team_table . " WHERE teamNumber=" . $_GET['team']);
         if (!$team_query) {
             die(mysql_error());
@@ -80,6 +81,61 @@ include('header.php');
                 echo("</table>");
             }
             ?>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">
+                Team Matches
+            </h2>
+        </div>
+        <div class="panel-body" style="overflow-x: auto;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Match #</th>
+                        <th>Blue 1</th>
+                        <th>Blue 2</th>
+                        <th>Blue 3</th>
+                        <th>Red 1</th>
+                        <th>Red 2</th>
+                        <th>Red 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $match_query = mysql_query("SELECT * FROM " . $match_name . " WHERE red1=" . $team_num . " OR red2=" . $team_num . " OR red3=" . $team_num . " OR blue1=" . $team_num . " OR blue2=" . $team_num . " OR blue3=" . $team_num);
+                    if (!$match_query) {
+                        die(mysql_error());
+                    }
+                    while ($match_record = mysql_fetch_array($match_query)) {
+                        echo("<tr>");
+                        echo("td scope=\"row\">");
+                        echo("<a href=\"view_match.php?id=" . $event_id . "&match=" . $match_record['id'] . "\">" . $match_record['id'] . "</a>");
+                        echo("</td>");
+                        echo("td scope=\"row\">");
+                        echo("<a href=\"view_team.php?id=" . $event_id . "&team=" . $match_record['blue1'] . "\" class=\"btn btn-primary\">" . $match_record['blue1'] . "</a>");
+                        echo("</td>");
+                        echo("td scope=\"row\">");
+                        echo("<a href=\"view_team.php?id=" . $event_id . "&team=" . $match_record['blue2'] . "\" class=\"btn btn-primary\">" . $match_record['blue2'] . "</a>");
+                        echo("</td>");
+                        echo("td scope=\"row\">");
+                        echo("<a href=\"view_team.php?id=" . $event_id . "&team=" . $match_record['blue3'] . "\" class=\"btn btn-primary\">" . $match_record['blue3'] . "</a>");
+                        echo("</td>");
+                        echo("td scope=\"row\">");
+                        echo("<a href=\"view_team.php?id=" . $event_id . "&team=" . $match_record['red1'] . "\" class=\"btn btn-danger\">" . $match_record['red1'] . "</a>");
+                        echo("</td>");
+                        echo("td scope=\"row\">");
+                        echo("<a href=\"view_team.php?id=" . $event_id . "&team=" . $match_record['red2'] . "\" class=\"btn btn-danger\">" . $match_record['red2'] . "</a>");
+                        echo("</td>");
+                        echo("td scope=\"row\">");
+                        echo("<a href=\"view_team.php?id=" . $event_id . "&team=" . $match_record['red3'] . "\" class=\"btn btn-danger\">" . $match_record['red3'] . "</a>");
+                        echo("</td>");
+                        echo("</tr>");
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
     </div>
     <?php
