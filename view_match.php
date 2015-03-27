@@ -111,7 +111,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $bluepredict2_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1']);
+                            $bluepredict2_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue2']);
                             $bluepredict2_record = mysql_fetch_array($bluepredict2_query);
                             $bluepredict2_score = intval($bluepredict1_record['score']);
                             echo($bluepredict2_score);
@@ -119,7 +119,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $bluepredict3_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1']);
+                            $bluepredict3_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue3']);
                             $bluepredict3_record = mysql_fetch_array($bluepredict1_query);
                             $bluepredict3_score = intval($bluepredict3_record['score']);
                             echo($bluepredict3_score);
@@ -127,7 +127,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $redpredict1_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1']);
+                            $redpredict1_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['red1']);
                             $redpredict1_record = mysql_fetch_array($redpredict1_query);
                             $redpredict1_score = intval($redpredict1_record['score']);
                             echo($redpredict1_score);
@@ -135,7 +135,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $redpredict2_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1']);
+                            $redpredict2_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['red2']);
                             $redpredict2_record = mysql_fetch_array($redpredict2_query);
                             $redpredict2_score = intval($redpredict2_record['score']);
                             echo($redpredict2_score);
@@ -143,7 +143,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $redpredict3_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1']);
+                            $redpredict3_query = mysql_query("SELECT AVG((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['red3']);
                             $redpredict3_record = mysql_fetch_array($redpredict1_query);
                             $redpredict3_score = intval($redpredict3_record['score']);
                             echo($redpredict3_score);
@@ -200,7 +200,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $blue2_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1'] . " AND matchNumber=" . $_GET['match']);
+                            $blue2_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue2'] . " AND matchNumber=" . $_GET['match']);
                             $blue2_record = mysql_fetch_array($blue2_query);
                             $blue2_score = intval($blue1_record['score']);
                             echo($blue2_score);
@@ -208,7 +208,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $blue3_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1'] . " AND matchNumber=" . $_GET['match']);
+                            $blue3_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue3'] . " AND matchNumber=" . $_GET['match']);
                             $blue3_record = mysql_fetch_array($blue1_query);
                             $blue3_score = intval($blue3_record['score']);
                             echo($blue3_score);
@@ -216,7 +216,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $red1_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1'] . " AND matchNumber=" . $_GET['match']);
+                            $red1_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['red1'] . " AND matchNumber=" . $_GET['match']);
                             $red1_record = mysql_fetch_array($red1_query);
                             $red1_score = intval($red1_record['score']);
                             echo($red1_score);
@@ -224,7 +224,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $red2_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1'] . " AND matchNumber=" . $_GET['match']);
+                            $red2_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['red2'] . " AND matchNumber=" . $_GET['match']);
                             $red2_record = mysql_fetch_array($red2_query);
                             $red2_score = intval($red2_record['score']);
                             echo($red2_score);
@@ -232,7 +232,7 @@ include('header.php');
                         </td>
                         <td scope="row">
                             <?php
-                            $red3_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['blue1'] . " AND matchNumber=" . $_GET['match']);
+                            $red3_query = mysql_query("SELECT ((2*(tote0 + tote1 + tote2 + tote3 + tote4 + tote5) + 6*noodleTrash + container0*1*4 + container1*2*4 + container2*3*4 + container3*4*4 + container4*5*4 + container5*6*4)) score FROM " . $data_name . " WHERE teamNumber=" . $teams_record['red3'] . " AND matchNumber=" . $_GET['match']);
                             $red3_record = mysql_fetch_array($red1_query);
                             $red3_score = intval($red3_record['score']);
                             echo($red3_score);
