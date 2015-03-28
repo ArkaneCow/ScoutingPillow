@@ -21,7 +21,7 @@ $prescout_name = $record['prefixName'] . "_prescout"
 <?php
 include('header.php');
 ?>
-<script type="text/javascript" src="/js/jquery.tablesorter.js"></script> 
+<script type="text/javascript" src="js/jquery.tablesorter.js"></script> 
 <script type="text/javascript">
     $(document).ready(function ()
     {
