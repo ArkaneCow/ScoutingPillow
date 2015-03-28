@@ -21,6 +21,14 @@ $prescout_name = $record['prefixName'] . "_prescout"
 <?php
 include('header.php');
 ?>
+<script type="text/javascript" src="/path/to/jquery.tablesorter.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        $("#ranktable").tablesorter();
+    }
+    );
+</script>
 <div class="container">
     <div class="page-header">
         <h3>Team Rankings</h3>
@@ -36,7 +44,7 @@ include('header.php');
             <h2 class="panel-title">Team Contribution Rankings</h2>
         </div>
         <div class="panel-body">
-            <table class="container">
+            <table class="container" id="ranktable">
                 <thead>
                     <tr>
                         <th>Rank #</th>
