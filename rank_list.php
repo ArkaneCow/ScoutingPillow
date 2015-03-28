@@ -43,7 +43,7 @@ include('header.php');
         <div class="panel-heading">
             <h2 class="panel-title">Team Contribution Rankings</h2>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="overflow-x: auto;">
             <table class="table tablesorter" id="ranktable">
                 <thead>
                     <tr>

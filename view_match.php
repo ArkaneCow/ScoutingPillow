@@ -37,7 +37,7 @@ include('header.php');
         <div class="panel-heading">
             <h2 class="panel-title">Match Participants</h2>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="overflow-x: auto;">
             <table class="table">
                 <thead>
                     <tr>
@@ -89,7 +89,7 @@ include('header.php');
         <div class="panel-heading">
             <h2 class="panel-title">Match Avg Pt Predictions</h2>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="overflow-x: auto;">
             <table class="table">
                 <thread>
                     <th>Blue 1</th>
@@ -178,7 +178,7 @@ include('header.php');
         <div class="panel-heading">
             <h2 class="panel-title">Match Results</h2>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="overflow-x: auto;">
             <table class="table">
                 <thread>
                     <th>Blue 1</th>

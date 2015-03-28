@@ -34,8 +34,8 @@ include('header.php');
         <div class="panel-heading">
             <h2 class="panel-title">Team List</h2>
         </div>
-        <div class="panel-body">
-            <table class="container">
+        <div class="panel-body" style="overflow-x: auto;">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Team #</th>

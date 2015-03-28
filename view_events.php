@@ -18,7 +18,7 @@ include('header.php');
         <div class="panel-heading">
             <h2 class="panel-title">Events</h2>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="overflow-x: auto;">
             <table class="table">
                 <thead>
                     <tr>
