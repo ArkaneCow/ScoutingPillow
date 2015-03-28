@@ -4,7 +4,7 @@
         <title>Scouting Pillow</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="style.css" rel="stylesheet">
-        <script type="text/javascript" src="js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="js/jquery-latest.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript">
             $(window).load(function () {
