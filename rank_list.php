@@ -44,7 +44,7 @@ include('header.php');
             <h2 class="panel-title">Team Contribution Rankings</h2>
         </div>
         <div class="panel-body">
-            <table class="container" id="ranktable">
+            <table class="tablesorter" id="ranktable">
                 <thead>
                     <tr>
                         <th>Rank #</th>
